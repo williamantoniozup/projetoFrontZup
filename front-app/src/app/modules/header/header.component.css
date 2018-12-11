@@ -10,4 +10,38 @@ img.responsive-img{
     max-width: 100%;
     height: 40px;
     margin-top: 15px;
+    padding-left: 10px;
+}
+
+#inputTextHeader{
+    height: 40px;
+}
+
+#autocomplete-input{
+    border-bottom: none;
+}
+
+#containerInput{
+    background-color: white;
+    border-radius: 35px; 
+    height: 40px;
+    margin-top: 12px;
+}
+
+#iconPerfil{
+    padding-left: 185px;
+    font-size: 40px;
+}
+
+.containerIconLupa{
+    height: 40px;
+}
+
+.lupaIcon{
+    line-height: 2;
+    font-weight: bold;
+    padding: 0;
+    height: 40px;
+    color:#a7d21e;
+    max-width:100%;
 }
