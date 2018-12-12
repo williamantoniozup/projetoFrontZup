@@ -1,0 +1,57 @@
+.containerCollection{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.collection{
+    border:none;
+    box-shadow: 5px 0 10px -5px rgba(51, 51, 51, 0.53);
+    margin: 0;
+    padding: 0;
+}
+
+.containerAll{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    align-items:center;
+    color:#868489;
+}
+
+.containerAttended{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    align-items:center;
+    color:#868489;
+}
+
+.done_all{
+    padding: 0px 15px 0px 35px;
+}
+
+.containerTrashcan{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    align-items:center;
+    color:#868489;
+}
+
+.delete_sweep{
+    padding: 0px 26px 0px 8px;
+}
+
+.trashText{
+    padding: 0 0 0 0;
+}
+
+.containerSpace{
+    height: 20px;
+}
+

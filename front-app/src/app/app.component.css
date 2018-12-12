@@ -1,4 +1,20 @@
 
-.app .row .col{
+/* .app .row .col{
     padding: 0 !important;
+    margin: 0 !important;
+} */
+
+*{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+div.header {position:relative;}
+
+
+.panel{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: #f5f5f5;
 }
