@@ -1,6 +1,8 @@
 .containerCollection{
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .collection{
@@ -42,7 +44,7 @@
 }
 
 .delete_sweep{
-    padding: -1px 0px 0px 0px;
+    padding: 0px 26px 0px 8px;
 }
 
 .trashText{
