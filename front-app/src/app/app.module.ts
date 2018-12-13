@@ -1,4 +1,4 @@
-
+import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './core/components/modal/modal.component';
 import { PanelDatatableComponent } from './core/components/panel-datatable/panel-datatable.component'
 import { MenuComponent } from './modules/menu/menu.component';
@@ -38,6 +38,7 @@ import { PanelAttendedDatatableComponent } from './modules/panel-attended/panel-
     BrowserModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [GenericHttpService],
