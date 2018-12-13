@@ -7,13 +7,12 @@ import { Profile } from 'selenium-webdriver/firefox';
   selector: 'app-panel-all',
   templateUrl: './panel-all.component.html',
   styleUrls: ['./panel-all.component.css'],
-  providers:[GenericHttpService]
 })
 export class PanelAllComponent {
 
-  public profiles: Profile[];
+  // public profiles: Profile[];
 
-  constructor(private _profileService: GenericHttpService){}
+  // constructor(){}
 
   // ngOnInit(){
   //   this._profileService.getProfiles()
