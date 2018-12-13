@@ -15,6 +15,9 @@ import { ROUTES } from './app.routes';
 import { PanelAllComponent } from './modules/panel-all/panel-all.component';
 import { PanelAttendedComponent } from './modules/panel-attended/panel-attended.component';
 import { PanelTrashComponent } from './modules/panel-trash/panel-trash.component';
+import { PanelTrashDatatableComponent } from './modules/panel-trash/panel-trash-datatable/panel-trash-datatable.component';
+import { PanelAllDatatableComponent } from './modules/panel-all/panel-all-datatable/panel-all-datatable.component';
+import { PanelAttendedDatatableComponent } from './modules/panel-attended/panel-attended-datatable/panel-attended-datatable.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { PanelTrashComponent } from './modules/panel-trash/panel-trash.component
     ModalComponent,
     PanelAllComponent,
     PanelAttendedComponent,
-    PanelTrashComponent
+    PanelTrashComponent,
+    PanelTrashDatatableComponent,
+    PanelAllDatatableComponent,
+    PanelAttendedDatatableComponent
   ],
   imports: [
     BrowserModule,
