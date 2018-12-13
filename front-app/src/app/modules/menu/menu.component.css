@@ -19,6 +19,8 @@
     margin: 0;
     align-items:center;
     color:#868489;
+    cursor:pointer; 
+    outline: none;
 }
 
 .containerAttended{
@@ -28,6 +30,8 @@
     margin: 0;
     align-items:center;
     color:#868489;
+    cursor:pointer; 
+    outline: none;
 }
 
 .done_all{
@@ -41,6 +45,8 @@
     margin: 0;
     align-items:center;
     color:#868489;
+    cursor:pointer; 
+    outline: none;
 }
 
 .delete_sweep{
