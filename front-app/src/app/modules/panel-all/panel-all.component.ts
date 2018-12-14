@@ -8,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelAllComponent implements OnInit{
 
-  public payload: any;
+  public listProfilesAll: any = [];
 
   constructor(private _sandbox: GenericSandboxService){}  
 
   ngOnInit() {
     this._sandbox.doGetListProfiles();
-    console.log(this._sandbox.payload)
+    this._sandbox.profiles.subscribe(
+      res => {
+        this.listProfilesAll = res;
+      }
+    )
   }
 }
