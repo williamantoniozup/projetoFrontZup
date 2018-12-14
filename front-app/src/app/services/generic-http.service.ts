@@ -8,7 +8,7 @@ export class GenericHttpService {
 
     constructor(private _http: HttpClient){}
 
-    public getProfiles(): Observable<object>{
+    public getProfiles(): Observable<any>{
         return this._http.get('https://randomuser.me/api/?results=10');
     }
 }

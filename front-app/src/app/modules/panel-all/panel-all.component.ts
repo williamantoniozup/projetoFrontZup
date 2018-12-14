@@ -1,7 +1,5 @@
-
+import { GenericSandboxService } from './../../services/generic-sandbox.service';
 import { Component, OnInit } from '@angular/core';
-import { GenericHttpService } from 'src/app/generic-http.service';
-import { Profile } from 'src/app/models/profile.model';
 
 @Component({
   selector: 'app-panel-all',
@@ -10,25 +8,12 @@ import { Profile } from 'src/app/models/profile.model';
 })
 export class PanelAllComponent implements OnInit{
 
-  public list$: Array<Profile> = [];
+  public payload: any;
 
-  constructor(private _genericService: GenericHttpService){}  
+  constructor(private _sandbox: GenericSandboxService){}  
 
   ngOnInit() {
-    
-    this._genericService.getProfiles().subscribe(
-      (response) => {
-        // console.log(response);
-        // console.log(response);
-        // console.log(typeof(response))
-        this.list$ = response['Profiles'];
-      }
-    )
-
-    console.log(this.list$);
-    
-    
-    
+    this._sandbox.doGetListProfiles();
+    console.log(this._sandbox.payload)
   }
-
 }

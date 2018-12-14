@@ -53,7 +53,7 @@ export interface Profile {
         },
         nat: string
         }
-    ],
+    ]
     info: {
         seed: string,
         results: number,
