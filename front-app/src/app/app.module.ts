@@ -19,6 +19,7 @@ import { PanelTrashComponent } from './modules/panel-trash/panel-trash.component
 import { PanelTrashDatatableComponent } from './modules/panel-trash/panel-trash-datatable/panel-trash-datatable.component';
 import { PanelAllDatatableComponent } from './modules/panel-all/panel-all-datatable/panel-all-datatable.component';
 import { PanelAttendedDatatableComponent } from './modules/panel-attended/panel-attended-datatable/panel-attended-datatable.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PanelAttendedDatatableComponent } from './modules/panel-attended/panel-
     BrowserAnimationsModule,
     NoopAnimationsModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    FlexLayoutModule
   ],
   providers: [
     GenericHttpService,

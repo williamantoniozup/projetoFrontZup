@@ -9,7 +9,7 @@ import { filter, map } from 'rxjs/operators';
 
 export class GenericSandboxService{
 
-    public payload: any;
+    public profiles: Subject<any> = new Subject<any>();
 
     constructor(private _httpRequest: GenericHttpService){}
 
@@ -18,9 +18,7 @@ export class GenericSandboxService{
         .pipe(map((res) => res.results))
         .subscribe(
             (response) => {
-                console.log('aqui')
-                this.payload = response;
-                console.log(this.payload)
+                this.profiles.next(response)
             }
         );
     }
