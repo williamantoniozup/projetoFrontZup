@@ -1,3 +1,16 @@
+.containerGeral{
+  margin: 0px;
+  width: 100%;
+  min-height: 100%;
+}
+
+.containerMain{
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
 .row::after {
   content: "";
   clear: both;
@@ -45,7 +58,7 @@
   width: 75%;
 }
 .col-10 {
-  width: 83.33%;
+  width: 88.65%;
 }
 .col-11 {
   width: 91.66%;

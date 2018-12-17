@@ -7,10 +7,11 @@
 }
 
 img.responsive {
-  width: 30%;
+  width: 50%;
   height: auto;
-  min-width: 55px;
+  min-width: 65px;
   min-height: 30px;
+  max-width: 95px;
   margin-top: 12px;
   margin-left: -15px;
   padding-left: 20px;

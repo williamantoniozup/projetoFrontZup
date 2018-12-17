@@ -1,14 +1,15 @@
+import { Profile } from './../../models/profile.model';
 import { GenericSandboxService } from './../../services/generic-sandbox.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-panel-all',
   templateUrl: './panel-all.component.html',
-  styleUrls: ['./panel-all.component.css'],
+  styleUrls: ['./panel-all.component.css']
 })
 export class PanelAllComponent implements OnInit{
 
-  public listProfilesAll: any = [];
+  public listProfilesAll: Profile[] = [];
 
   constructor(private _sandbox: GenericSandboxService){}  
 
@@ -21,3 +22,11 @@ export class PanelAllComponent implements OnInit{
     )
   }
 }
+
+/* 
+profile
+name
+email
+telefone
+city
+*/

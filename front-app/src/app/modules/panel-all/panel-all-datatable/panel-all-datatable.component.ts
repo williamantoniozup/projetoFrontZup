@@ -12,9 +12,17 @@ export class PanelAllDatatableComponent implements OnChanges{
 
   ngOnChanges(changes): void {
     if(this.data.length > 0){
-      console.log(this.data);
-      console.log(this.data[1]['name'].first) 
-      // this.profileAll = 
+      this.profileAll = this.data;
+      console.log(this.profileAll);
     }
   }
 }
+
+
+
+
+// profileObject.imgProfile = profile['picture'].thumbnail;
+//             profileObject.name = profile['name'].first;
+//             profileObject.email = profile.email;
+//             profileObject.phone = profile.phone;
+//             profileObject.city = profile['location'].city;

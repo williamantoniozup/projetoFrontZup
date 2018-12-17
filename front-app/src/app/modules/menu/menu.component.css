@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .collection {
   border: none;
-  box-shadow: 5px 0 10px -5px rgba(51, 51, 51, 0.53);
+  /* box-shadow: 5px 0 10px -5px rgba(51, 51, 51, 0.53); */
   margin: 0;
   padding: 0;
 }
@@ -22,6 +22,11 @@
   cursor: pointer;
   outline: none;
 }
+
+/* .select_all{
+  width: 30%;
+  height: auto;
+} */
 
 .containerAttended {
   display: flex;

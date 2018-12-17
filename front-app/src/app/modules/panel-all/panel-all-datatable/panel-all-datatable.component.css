@@ -1,16 +1,47 @@
-.containerDatatable{
-    display: flex;
-    /* justify-content: center; */
-    align-items:center;
-    background-color: rgb(255, 255, 255);
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    margin: 50px;
-    max-width: 100%;
-    height: auto;
-    box-shadow: 0 0 5px #8684897b;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    flex:0.5;
+.containerDatatable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin: 50px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 0 5px #8684897b;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  flex: 0.5;
+}
+
+.tablePerfil {
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 3px solid #86848942;
+  height: 64px;
+  max-width: 100%;
+}
+
+tr.profileRow > td.columnImgProfile > .imgProfile {
+  margin: 0 1%;
+  width: 45px;
+  right: 45px;
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
+}
+
+td.columnImgProfile {
+  padding-left: 25px;
+}
+
+td.columnIconDelete td.columnIconSelect td.columnIconCheck {
+  padding: 10px 10px;
+}
+
+.active {
+  color: #a7d21e;
 }
