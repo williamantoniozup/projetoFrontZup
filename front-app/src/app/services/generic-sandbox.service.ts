@@ -26,6 +26,12 @@ export class GenericSandboxService{
         );
     }
 
+    public doPutListProfilesAll(payload){
+        
+    }
+
+
+
     public formatPayloadProfiles(payload){
         const listProfileAux: Profile[] = [];
 
