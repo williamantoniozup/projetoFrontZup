@@ -12,7 +12,7 @@
                 <td class="columnIconSelect"><i class="small material-icons col s0.5 check">check</i></td>
             </tr>
         </tbody>
-        <tbody *ngIf="false">
+        <tbody *ngIf="validationAttended">
             <tr class="profileRow" *ngFor="let profile of profileAll">
                 <td class='columnImgProfile'><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
                 <td class='columnName'><span class='nameProfile'><b>{{ profile.name }}</b></span></td>
@@ -23,7 +23,7 @@
                 <td class="columnIconSelect"><i class="small material-icons col s0.5 select_all">select_all</i></td>
             </tr>
         </tbody>
-        <tbody *ngIf="false">
+        <tbody *ngIf="validationTrash">
             <tr class="profileRow" *ngFor="let profile of profileAll">
                 <td class='columnImgProfile'><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
                 <td class='columnName'><span class='nameProfile'><b>{{ profile.name }}</b></span></td>

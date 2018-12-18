@@ -10,17 +10,27 @@ import { Component, OnInit } from '@angular/core';
 export class PanelAllComponent implements OnInit{
 
   public listProfilesAll: Profile[] = [];
+  public menuTable: string;
 
   constructor(private _sandbox: GenericSandboxService){}  
 
   ngOnInit() {
-    this._sandbox.doGetListProfiles();
-    this._sandbox.profiles.subscribe(
+    this._sandbox.doGetListProfilesAll();
+    this._sandbox.profilesAll.subscribe(
       res => {
         this.listProfilesAll = res;
+        console.log(this.listProfilesAll);
       }
     )
   }
+
+  public sendIndexMenu(tipo: string){
+    console.log('Peguei menu ALL!');
+    console.log(tipo);
+    this.menuTable = tipo;
+  }
+
+  
 }
 
 /* 

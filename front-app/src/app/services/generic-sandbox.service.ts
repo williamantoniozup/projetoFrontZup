@@ -10,11 +10,12 @@ import { filter, map } from 'rxjs/operators';
 export class GenericSandboxService{
 
     public profiles: Subject<Profile[]> = new Subject<Profile[]>();
+    public profilesAll: Subject<Profile[]> = new Subject<Profile[]>();
     public listProfiles: Profile[] = [];
 
     constructor(private _httpRequest: GenericHttpService){}
 
-    public doGetListProfiles(){
+    public doGetListProfiles(): void{
         // this.profiles.next(null);
         this._httpRequest.getProfiles()
         .pipe(map((res) => res.results))
@@ -26,16 +27,56 @@ export class GenericSandboxService{
         );
     }
 
-    public doPutListProfilesAll(payload){
-        
+    // ALL
+    public doGetListProfilesAll(): void{
+        this._httpRequest.getProfilesAll().subscribe(
+            res => {
+                this.profilesAll.next(res);
+            }
+        )
+    }
+
+    public doPostListProfilesAll(payload: Array<object>): void{
+        payload.forEach(element => {
+            this._httpRequest.saveProfilesAll(element).subscribe((data:any)=>{});
+        });   
+    }
+
+    // ATTENDED
+    public doGetListProfilesAttended(): void{
+        this._httpRequest.getProfilesAttended().subscribe(
+            res => {
+                this.profilesAll.next(res);
+            }
+        )
+    }
+
+    public doPostListProfilesAttended(payload: Array<object>): void{
+        payload.forEach(element => {
+            this._httpRequest.saveProfilesAttended(element).subscribe((data:any)=>{});
+        });   
+    }
+
+    // TRASH
+    public doGetListProfilesTrash(): void{
+        this._httpRequest.getProfilesAttended().subscribe(
+            res => {
+                this.profilesAll.next(res);
+            }
+        )
+    }
+
+    public doPostListProfilesTrash(payload: Array<object>): void{
+        payload.forEach(element => {
+            this._httpRequest.saveProfilesAttended(element).subscribe((data:any)=>{});
+        });   
     }
 
 
-
-    public formatPayloadProfiles(payload){
+    public formatPayloadProfiles(payload: any): Array<Profile>{
         const listProfileAux: Profile[] = [];
 
-        payload.map((profile)=>{
+        payload.map((profile: any)=>{
             let profileObject = {
                 imgProfile: '',
                 name: '',
