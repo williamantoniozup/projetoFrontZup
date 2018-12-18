@@ -8,7 +8,8 @@ import { GenericSandboxService } from 'src/app/services/generic-sandbox.service'
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent {
-  public listProfilesAll: Profile[] = [];
+  
+  public listProfiles: Profile[] = [];
 
   constructor(private _sandbox: GenericSandboxService){}  
 
@@ -16,7 +17,8 @@ export class PanelComponent {
     this._sandbox.doGetListProfiles();
     this._sandbox.profiles.subscribe(
       res => {
-        this.listProfilesAll = res;
+        this.listProfiles = res;
+        this._sandbox.doPostListProfilesAll(this.listProfiles);
       }
     )
   }
