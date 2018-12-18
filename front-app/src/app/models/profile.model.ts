@@ -4,4 +4,5 @@ export class Profile {
     public email: string
     public phone: string
     public city: string
+    public id?: number;
 }

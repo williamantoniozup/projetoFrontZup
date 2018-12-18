@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class PanelDatatableComponent implements OnInit {
 
   @Input() data = []; 
+  @Output() onIdAttended = new EventEmitter<number>();
+  @Output() onIdTrash = new EventEmitter<number>();
 
   public profiles: any = [];
   public validationAll: boolean = false;
@@ -30,7 +32,7 @@ export class PanelDatatableComponent implements OnInit {
     }
   }
 
-  ngOnChanges(changes): void {
+  ngOnChanges(changes: any): void {
     if(this.data.length > 0){
       this.profiles = this.data;
     }
@@ -56,9 +58,11 @@ export class PanelDatatableComponent implements OnInit {
 
   public sendToAttended(id: number){
     // console.log('id attended ' +id);
+    this.onIdAttended.emit(id);
   }
 
   public sendToTrash(id: number){
     // console.log('id trash ' + id)
+    this.onIdTrash.emit(id);
   }
 }

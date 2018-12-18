@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class PanelAttendedComponent implements OnInit{
 
   public listProfilesAttended: Profile[] = [];
+  public idProfileAttendedMove: number;
 
   constructor(private _sandbox: GenericSandboxService){}
 
@@ -21,6 +22,11 @@ export class PanelAttendedComponent implements OnInit{
         this.listProfilesAttended = res;
       }
     )
+  }
+
+  public onGetIdAttended(id: number){
+    this.idProfileAttendedMove = id;
+    console.log( 'peguei id  '+this.idProfileAttendedMove)
   }
 
 

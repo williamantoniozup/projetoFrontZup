@@ -10,10 +10,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class PanelAllComponent implements OnInit{
 
   public listProfilesAll: Profile[] = [];
+  public idProfileMoveToAttended: number;
+  public idProfileMoveToTrash: number;
 
   constructor(private _sandbox: GenericSandboxService){}  
 
-  ngOnInit() {
+  ngOnInit(): void {
     this._sandbox.doGetListProfilesAll();
     this._sandbox.profilesAll.subscribe(
       res => {
@@ -22,6 +24,18 @@ export class PanelAllComponent implements OnInit{
       }
     )
   }  
+
+  public onGetIdAttended(id: number): void {
+    this.idProfileMoveToAttended = id;
+    console.log( 'peguei id attended  '+this.idProfileMoveToAttended);
+  }
+
+  public onGetIdTrash(id: number): void {
+    this.idProfileMoveToTrash = id;
+    console.log( 'peguei id trash  '+this.idProfileMoveToTrash);
+  }
+
+
 }
 
 /* 
