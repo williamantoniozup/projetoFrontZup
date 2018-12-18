@@ -57,6 +57,15 @@ i.check{
   color: #86848997;
 }
 
+span.nameProfile{
+  color: #323c52;
+  font-size: 20px;
+}
+
+span.emailProfile, span.phoneProfile, span.cityProfile{
+  color:#868489c9;
+}
+
 .active {
   color: #a7d21e;
 }
