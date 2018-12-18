@@ -1,19 +1,19 @@
 <div class="containerDatatable row">
     <table class="tablePerfil responsive-table">
-        <tbody *ngIf="true">
-            <tr class="profileRow" *ngFor="let profile of profileAll">
+        <tbody *ngIf="validationAll">
+            <tr class="profileRow" *ngFor="let profile of profiles">
                 <td class='columnImgProfile'><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
                 <td class='columnName'><span class='nameProfile'><b>{{ profile.name }}</b></span></td>
                 <td class='columnEmail'><span class='emailProfile'>{{ profile.email }}</span></td>
                 <td class='columnTel'><span class='phoneProfile'>{{ profile.phone }}</span></td>
                 <td class='columnCity'><span class='cityProfile'>{{ profile.city }}</span></td>
-                <td class="columnIconSelect"><i class="small material-icons col s0.5 delete">delete</i></td>
+                <td class="columnIconSelect"><i class="small material-icons col s0.5 delete" (click)="sendToTrash(profile.id)">delete</i></td>
                 <td class="columnIconSelect"><i class="small material-icons col s0.5 select_all">select_all</i></td>
-                <td class="columnIconSelect"><i class="small material-icons col s0.5 check">check</i></td>
+                <td class="columnIconSelect"><i class="small material-icons col s0.5 check" (click)="sendToAttended(profile.id)">check</i></td>
             </tr>
         </tbody>
         <tbody *ngIf="validationAttended">
-            <tr class="profileRow" *ngFor="let profile of profileAll">
+            <tr class="profileRow" *ngFor="let profile of profiles">
                 <td class='columnImgProfile'><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
                 <td class='columnName'><span class='nameProfile'><b>{{ profile.name }}</b></span></td>
                 <td class='columnEmail'><span class='emailProfile'>{{ profile.email }}</span></td>
@@ -24,7 +24,7 @@
             </tr>
         </tbody>
         <tbody *ngIf="validationTrash">
-            <tr class="profileRow" *ngFor="let profile of profileAll">
+            <tr class="profileRow" *ngFor="let profile of profiles">
                 <td class='columnImgProfile'><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
                 <td class='columnName'><span class='nameProfile'><b>{{ profile.name }}</b></span></td>
                 <td class='columnEmail'><span class='emailProfile'>{{ profile.email }}</span></td>
@@ -36,27 +36,3 @@
         </tbody>
     </table>
 </div>
-
-<!-- 
-    
-    TESTE!!!!!
-    
-    <div class="containerDatatable row">
-    <table class="tablePerfil responsive-table">
-        <tbody *ngIf="false">
-            <tr class="profileRow">
-                <td class='columnImgProfile'>ALLL</td>
-            </tr>
-        </tbody>
-        <tbody *ngIf="true">
-            <tr class="profileRow">
-                <td class='columnImgProfile'>atendidos</td>
-            </tr>
-        </tbody>
-        <tbody *ngIf="false">
-            <tr class="profileRow">
-                <td class='columnImgProfile'>LIXO</td>
-            </tr>
-        </tbody>
-    </table>
-</div> -->

@@ -11,6 +11,8 @@ export class GenericSandboxService{
 
     public profiles: Subject<Profile[]> = new Subject<Profile[]>();
     public profilesAll: Subject<Profile[]> = new Subject<Profile[]>();
+    public profilesAttended: Subject<Profile[]> = new Subject<Profile[]>();
+    public profilesTrash: Subject<Profile[]> = new Subject<Profile[]>();
     public listProfiles: Profile[] = [];
 
     constructor(private _httpRequest: GenericHttpService){}
@@ -46,7 +48,7 @@ export class GenericSandboxService{
     public doGetListProfilesAttended(): void{
         this._httpRequest.getProfilesAttended().subscribe(
             res => {
-                this.profilesAll.next(res);
+                this.profilesAttended.next(res);
             }
         )
     }
@@ -61,7 +63,7 @@ export class GenericSandboxService{
     public doGetListProfilesTrash(): void{
         this._httpRequest.getProfilesAttended().subscribe(
             res => {
-                this.profilesAll.next(res);
+                this.profilesTrash.next(res);
             }
         )
     }

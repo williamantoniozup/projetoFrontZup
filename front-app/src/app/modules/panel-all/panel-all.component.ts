@@ -1,6 +1,6 @@
 import { Profile } from './../../models/profile.model';
 import { GenericSandboxService } from './../../services/generic-sandbox.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-panel-all',
@@ -10,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
 export class PanelAllComponent implements OnInit{
 
   public listProfilesAll: Profile[] = [];
-  public menuTable: string;
 
   constructor(private _sandbox: GenericSandboxService){}  
 
@@ -22,15 +21,7 @@ export class PanelAllComponent implements OnInit{
         console.log(this.listProfilesAll);
       }
     )
-  }
-
-  public sendIndexMenu(tipo: string){
-    console.log('Peguei menu ALL!');
-    console.log(tipo);
-    this.menuTable = tipo;
-  }
-
-  
+  }  
 }
 
 /* 
