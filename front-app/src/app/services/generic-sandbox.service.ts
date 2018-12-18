@@ -17,7 +17,7 @@ export class GenericSandboxService{
 
     constructor(private _httpRequest: GenericHttpService){}
 
-    public doGetListProfiles(): void{
+    public doGetListProfiles(): void {
         // this.profiles.next(null);
         this._httpRequest.getProfiles()
         .pipe(map((res) => res.results))
@@ -30,7 +30,7 @@ export class GenericSandboxService{
     }
 
     // ALL
-    public doGetListProfilesAll(): void{
+    public doGetListProfilesAll(): void {
         this._httpRequest.getProfilesAll().subscribe(
             res => {
                 this.profilesAll.next(res);
@@ -38,14 +38,20 @@ export class GenericSandboxService{
         )
     }
 
-    public doPostListProfilesAll(payload: Array<object>): void{
+    public doPostListProfilesAll(payload: Array<object>): void {
         payload.forEach(element => {
             this._httpRequest.saveProfilesAll(element).subscribe((data:any)=>{});
         });   
     }
 
+    public doDeleteListProfilesAll(id: number){
+        // let payloadRemoved = { id: id}
+        this._httpRequest.deleteProfilesAll(id).subscribe((data:any)=>{});
+        // console.log(payloadRemoved);
+    }
+
     // ATTENDED
-    public doGetListProfilesAttended(): void{
+    public doGetListProfilesAttended(): void {
         this._httpRequest.getProfilesAttended().subscribe(
             res => {
                 this.profilesAttended.next(res);
@@ -53,14 +59,14 @@ export class GenericSandboxService{
         )
     }
 
-    public doPostListProfilesAttended(payload: Array<object>): void{
+    public doPostListProfilesAttended(payload: Array<object>): void {
         payload.forEach(element => {
             this._httpRequest.saveProfilesAttended(element).subscribe((data:any)=>{});
         });   
     }
 
     // TRASH
-    public doGetListProfilesTrash(): void{
+    public doGetListProfilesTrash(): void {
         this._httpRequest.getProfilesAttended().subscribe(
             res => {
                 this.profilesTrash.next(res);
@@ -68,14 +74,14 @@ export class GenericSandboxService{
         )
     }
 
-    public doPostListProfilesTrash(payload: Array<object>): void{
+    public doPostListProfilesTrash(payload: Array<object>): void {
         payload.forEach(element => {
             this._httpRequest.saveProfilesAttended(element).subscribe((data:any)=>{});
         });   
     }
 
 
-    public formatPayloadProfiles(payload: any): Array<Profile>{
+    public formatPayloadProfiles(payload: any): Array<Profile> {
         const listProfileAux: Profile[] = [];
 
         payload.map((profile: any)=>{

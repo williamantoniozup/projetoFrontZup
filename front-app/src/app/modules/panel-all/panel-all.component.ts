@@ -28,6 +28,7 @@ export class PanelAllComponent implements OnInit{
   public onGetIdAttended(id: number): void {
     this.idProfileMoveToAttended = id;
     console.log( 'peguei id attended  '+this.idProfileMoveToAttended);
+    this._sandbox.doDeleteListProfilesAll(id);
   }
 
   public onGetIdTrash(id: number): void {
