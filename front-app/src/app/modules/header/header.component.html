@@ -15,12 +15,12 @@
               placeholder="Buscar"
               id="autocomplete-input"
               class="autocomplete black-text"
+              (keyup)="applyFilter($event.target.value)"
             />
           </div>
         </div>
         <div class="containerPerfil col s2">
-            <img class="imgAccount" src="{{ listProfilesImage[0].imgProfile }}" />
-          <!-- <i id="iconPerfil" class="large material-icons">account_circle</i> -->
+            <img class="imgAccount" src="{{ urlImg }}"/>
         </div>
       </div>
     </div>

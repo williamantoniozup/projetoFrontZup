@@ -1,15 +1,16 @@
 import { Profile } from './../../models/profile.model';
 import { GenericSandboxService } from './../../services/generic-sandbox.service';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-panel-all',
   templateUrl: './panel-all.component.html',
   styleUrls: ['./panel-all.component.css']
 })
-export class PanelAllComponent implements OnInit{
+export class PanelAllComponent implements OnInit, OnChanges{
 
   public listProfilesAll: Profile[] = [];
+  @Input() textSearch: string;
 
   constructor(private _sandbox: GenericSandboxService){}  
 
@@ -21,6 +22,10 @@ export class PanelAllComponent implements OnInit{
       }
     )
   }  
+
+  ngOnChanges(): void {
+    console.log(this.textSearch);
+  }
 
   public onGetIdAllToAttended(id: number): void {
     this.searchProfileAttended(id);

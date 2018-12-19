@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 import { GenericSandboxService } from 'src/app/services/generic-sandbox.service';
 import { Profile } from 'src/app/models/profile.model';
@@ -11,6 +11,8 @@ import { Profile } from 'src/app/models/profile.model';
 export class HeaderComponent{
   
   public listProfilesImage: Profile[] = [];
+  public urlImg: string = '';
+  @Output() textSearch = new EventEmitter<Event>();
 
   constructor(private _sandbox: GenericSandboxService){}  
 
@@ -19,8 +21,12 @@ export class HeaderComponent{
     this._sandbox.profilesImage.subscribe(
       res => {
         this.listProfilesImage = res;
-        console.log('aeee' , this.listProfilesImage);
+        this.urlImg = this.listProfilesImage[0].imgProfile;
       }
     )
+  }
+
+  public applyFilter(event: any){
+    this.textSearch.emit(event);
   }
 }

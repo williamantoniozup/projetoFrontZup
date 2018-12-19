@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, OnInit} from '@angular/core';
 import { Profile } from 'src/app/models/profile.model';
 import { GenericSandboxService } from 'src/app/services/generic-sandbox.service';
 
@@ -7,9 +7,11 @@ import { GenericSandboxService } from 'src/app/services/generic-sandbox.service'
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.css']
 })
-export class PanelComponent {
+export class PanelComponent implements OnChanges, OnInit {
   
   public listProfiles: Profile[] = [];
+
+  @Input() public textSearchSon: string;
 
   constructor(private _sandbox: GenericSandboxService){}  
 
@@ -21,5 +23,9 @@ export class PanelComponent {
         this._sandbox.doPostListProfilesAll(this.listProfiles);
       }
     )
+  }
+  ngOnChanges(): void {
+    // console.log(this.textSearchSon);
+
   }
 }
