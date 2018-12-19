@@ -1,7 +1,5 @@
-<!-- <app-panel-datatable [data]="listProfilesAll">
-</app-panel-datatable> -->
-
 <app-panel-datatable 
-    [textShowTable]="menuTable"
-    [data]="listProfilesAll">
+[data]="listProfilesAll"
+(onIdAttended)="onGetIdAttended($event)"
+(onIdTrash)="onGetIdTrash($event)">
 </app-panel-datatable>

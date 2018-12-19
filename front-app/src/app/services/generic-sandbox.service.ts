@@ -11,11 +11,13 @@ export class GenericSandboxService{
 
     public profiles: Subject<Profile[]> = new Subject<Profile[]>();
     public profilesAll: Subject<Profile[]> = new Subject<Profile[]>();
+    public profilesAttended: Subject<Profile[]> = new Subject<Profile[]>();
+    public profilesTrash: Subject<Profile[]> = new Subject<Profile[]>();
     public listProfiles: Profile[] = [];
 
     constructor(private _httpRequest: GenericHttpService){}
 
-    public doGetListProfiles(): void{
+    public doGetListProfiles(): void {
         // this.profiles.next(null);
         this._httpRequest.getProfiles()
         .pipe(map((res) => res.results))
@@ -28,7 +30,7 @@ export class GenericSandboxService{
     }
 
     // ALL
-    public doGetListProfilesAll(): void{
+    public doGetListProfilesAll(): void {
         this._httpRequest.getProfilesAll().subscribe(
             res => {
                 this.profilesAll.next(res);
@@ -36,44 +38,44 @@ export class GenericSandboxService{
         )
     }
 
-    public doPostListProfilesAll(payload: Array<object>): void{
+    public doPostListProfilesAll(payload: Array<object>): void {
         payload.forEach(element => {
             this._httpRequest.saveProfilesAll(element).subscribe((data:any)=>{});
         });   
     }
 
+    public doDeleteListProfilesAll(payload: object){
+        this._httpRequest.deleteProfilesAll(payload).subscribe((data:any)=>{});
+    }
+
     // ATTENDED
-    public doGetListProfilesAttended(): void{
+    public doGetListProfilesAttended(): void {
         this._httpRequest.getProfilesAttended().subscribe(
             res => {
-                this.profilesAll.next(res);
+                this.profilesAttended.next(res);
             }
         )
     }
 
-    public doPostListProfilesAttended(payload: Array<object>): void{
-        payload.forEach(element => {
-            this._httpRequest.saveProfilesAttended(element).subscribe((data:any)=>{});
-        });   
+    public doPostListProfilesAttended(payload: object): void {
+        this._httpRequest.saveProfilesAttended(payload).subscribe((data:any)=>{});
     }
 
     // TRASH
-    public doGetListProfilesTrash(): void{
-        this._httpRequest.getProfilesAttended().subscribe(
+    public doGetListProfilesTrash(): void {
+        this._httpRequest.getProfilesTrash().subscribe(
             res => {
-                this.profilesAll.next(res);
+                this.profilesTrash.next(res);
             }
         )
     }
 
-    public doPostListProfilesTrash(payload: Array<object>): void{
-        payload.forEach(element => {
-            this._httpRequest.saveProfilesAttended(element).subscribe((data:any)=>{});
-        });   
+    public doPostListProfilesTrash(payload: object): void {
+        this._httpRequest.saveProfilesTrash(payload).subscribe((data:any)=>{});      
     }
 
 
-    public formatPayloadProfiles(payload: any): Array<Profile>{
+    public formatPayloadProfiles(payload: any): Array<Profile> {
         const listProfileAux: Profile[] = [];
 
         payload.map((profile: any)=>{
