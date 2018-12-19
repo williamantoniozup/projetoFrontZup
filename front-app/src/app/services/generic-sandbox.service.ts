@@ -13,6 +13,7 @@ export class GenericSandboxService{
     public profilesAll: Subject<Profile[]> = new Subject<Profile[]>();
     public profilesAttended: Subject<Profile[]> = new Subject<Profile[]>();
     public profilesTrash: Subject<Profile[]> = new Subject<Profile[]>();
+    public profilesImage: Subject<Profile[]> = new Subject<Profile[]>();
     public listProfiles: Profile[] = [];
 
     constructor(private _httpRequest: GenericHttpService){}
@@ -26,6 +27,17 @@ export class GenericSandboxService{
             (response) => {
                 this.listProfiles = this.formatPayloadProfiles(response);
                 this.profiles.next(this.listProfiles);
+            }
+        );
+    }
+
+    public doGetImageProfileAccount(): void {
+        this._httpRequest.getImageProfileAccount()
+        .pipe(map((res) => res.results))
+        .subscribe(
+            (response) => {
+                this.listProfiles = this.formatPayloadProfiles(response);
+                this.profilesImage.next(this.listProfiles);
             }
         );
     }
