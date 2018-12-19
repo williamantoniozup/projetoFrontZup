@@ -20,21 +20,54 @@ export class PanelAllComponent implements OnInit{
     this._sandbox.profilesAll.subscribe(
       res => {
         this.listProfilesAll = res;
-        console.log(this.listProfilesAll);
+        // console.log(this.listProfilesAll);
       }
     )
   }  
 
   public onGetIdAttended(id: number): void {
-    this.idProfileMoveToAttended = id;
-    console.log( 'peguei id attended  '+this.idProfileMoveToAttended);
-    this._sandbox.doDeleteListProfilesAll(id);
+    // this.idProfileMoveToAttended = id;
+    // console.log( 'peguei id attended  '+id);
+    this.searchProfileAttended(id);
   }
 
   public onGetIdTrash(id: number): void {
-    this.idProfileMoveToTrash = id;
-    console.log( 'peguei id trash  '+this.idProfileMoveToTrash);
+    // console.log( 'peguei id trash  '+this.idProfileMoveToTrash);
+    this.searchProfileTrash(id);
   }
+
+
+  public moveProfileAllToProfileAttended(payload: object){
+    // console.log("imprimindo MOVE \n" + payload);
+    this._sandbox.doDeleteListProfilesAll(payload);
+    this._sandbox.doPostListProfilesAttended(payload);
+    this._sandbox.doGetListProfilesAll();
+  }
+
+  public moveProfileAllToProfileTrash(payload: object){
+    // console.log("imprimindo MOVE \n" + payload);
+    this._sandbox.doDeleteListProfilesAll(payload);
+    this._sandbox.doPostListProfilesTrash(payload);
+  }
+
+  public searchProfileAttended(id: number): void{
+    this.listProfilesAll.forEach(obj => {
+      if(obj.id == id){
+        this.moveProfileAllToProfileAttended(obj);
+      }
+    });
+  }
+
+  public searchProfileTrash(id: number): void{
+    this.listProfilesAll.forEach(obj => {
+      if(obj.id == id){
+        this.moveProfileAllToProfileTrash(obj);
+      }
+    });
+  }
+
+
+  
 
 
 }

@@ -44,10 +44,8 @@ export class GenericSandboxService{
         });   
     }
 
-    public doDeleteListProfilesAll(id: number){
-        // let payloadRemoved = { id: id}
-        this._httpRequest.deleteProfilesAll(id).subscribe((data:any)=>{});
-        // console.log(payloadRemoved);
+    public doDeleteListProfilesAll(payload: object){
+        this._httpRequest.deleteProfilesAll(payload).subscribe((data:any)=>{});
     }
 
     // ATTENDED
@@ -59,25 +57,21 @@ export class GenericSandboxService{
         )
     }
 
-    public doPostListProfilesAttended(payload: Array<object>): void {
-        payload.forEach(element => {
-            this._httpRequest.saveProfilesAttended(element).subscribe((data:any)=>{});
-        });   
+    public doPostListProfilesAttended(payload: object): void {
+        this._httpRequest.saveProfilesAttended(payload).subscribe((data:any)=>{});
     }
 
     // TRASH
     public doGetListProfilesTrash(): void {
-        this._httpRequest.getProfilesAttended().subscribe(
+        this._httpRequest.getProfilesTrash().subscribe(
             res => {
                 this.profilesTrash.next(res);
             }
         )
     }
 
-    public doPostListProfilesTrash(payload: Array<object>): void {
-        payload.forEach(element => {
-            this._httpRequest.saveProfilesAttended(element).subscribe((data:any)=>{});
-        });   
+    public doPostListProfilesTrash(payload: object): void {
+        this._httpRequest.saveProfilesTrash(payload).subscribe((data:any)=>{});      
     }
 
 

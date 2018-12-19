@@ -28,9 +28,11 @@ export class GenericHttpService {
 
     public updateProfilesTrash(payload): Observable<any>{return this._http.put('http://localhost:3000/trashcan', payload);}
 
-    public deleteProfilesAll(payload): Observable<any>{return this._http.delete('http://localhost:3000/profiles/', payload);}
+    public deleteProfilesAll(payload): Observable<any>{
+        return this._http.delete('http://localhost:3000/profiles/' + payload.id);
+    }
 
-    public deleteProfilesAttended(payload): Observable<any>{return this._http.delete('http://localhost:3000/attended', payload);}
+    public deleteProfilesAttended(payload): Observable<any>{return this._http.delete('http://localhost:3000/attended/' + payload.id);}
 
-    public deleteProfilesTrash(payload): Observable<any>{return this._http.delete('http://localhost:3000/trashcan', payload);}
+    public deleteProfilesTrash(payload): Observable<any>{return this._http.delete('http://localhost:3000/trashcan/'+ payload.id);}
 }
