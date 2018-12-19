@@ -1,3 +1,5 @@
 <app-panel-datatable 
-    [data]="listProfilesTrash">
+    [data]="listProfilesTrash"
+    (onIdTrashToAll)="onGetIdTrashToAll($event)"
+    (onIdTrashToAttended)="onGetIdTrashToAttended($event)">
 </app-panel-datatable>

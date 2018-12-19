@@ -1,32 +1,14 @@
 {
   "profiles": [
     {
-      "imgProfile": "https://randomuser.me/api/portraits/thumb/men/26.jpg",
-      "name": "lino",
-      "email": "lino.gautier@example.com",
-      "phone": "(071)-748-8192",
-      "city": "sevelen",
+      "imgProfile": "https://randomuser.me/api/portraits/thumb/women/59.jpg",
+      "name": "elizabeth",
+      "email": "elizabeth.arnaud@example.com",
+      "phone": "(419)-935-7054",
+      "city": "ins",
       "id": 1
     }
   ],
-  "attended": [
-    {
-      "imgProfile": "https://randomuser.me/api/portraits/thumb/men/12.jpg",
-      "name": "jordan",
-      "email": "jordan.ryan@example.com",
-      "phone": "(409)-819-9059",
-      "city": "lakewood",
-      "id": 2
-    }
-  ],
-  "trashcan": [
-    {
-      "imgProfile": "https://randomuser.me/api/portraits/thumb/men/42.jpg",
-      "name": "connor",
-      "email": "connor.gutierrez@example.com",
-      "phone": "(501)-315-2849",
-      "city": "evansville",
-      "id": 1
-    }
-  ]
+  "attended": [],
+  "trashcan": []
 }

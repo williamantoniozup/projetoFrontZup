@@ -21,4 +21,38 @@ export class PanelTrashComponent implements OnInit {
       }
     )
   }
+
+  public onGetIdTrashToAll(id: number): void {
+    this.searchProfileAll(id);
+  }
+
+  public onGetIdTrashToAttended(id: number): void {
+    this.searchProfileAttended(id);
+  }
+
+  public moveProfileTrashToProfileAll(payload: object): void {
+    this._sandbox.doDeleteListProfilesTrash(payload);
+    this._sandbox.doPostListProfilesAllJustObjetc(payload);
+  }
+
+  public moveProfileTrashToProfileAttended(payload: object): void {
+    this._sandbox.doDeleteListProfilesTrash(payload);
+    this._sandbox.doPostListProfilesAttended(payload);
+  }
+
+  public searchProfileAll(id: number): void {
+    this.listProfilesTrash.forEach(obj => {
+      if(obj.id == id){
+        this.moveProfileTrashToProfileAll(obj);
+      }
+    });
+  }
+
+  public searchProfileAttended(id: number): void {
+    this.listProfilesTrash.forEach(obj => {
+      if(obj.id == id){
+        this.moveProfileTrashToProfileAttended(obj);
+      }
+    });
+  }
 }

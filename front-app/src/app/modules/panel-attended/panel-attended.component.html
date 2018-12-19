@@ -1,3 +1,5 @@
 <app-panel-datatable 
     [data]="listProfilesAttended"
-></app-panel-datatable>
+    (onIdAttendedToTrash)="onGetIdAttendedToTrash($event)"
+    (onIdAttendedToAll)="onGetIdAttendedToAll($event)">
+</app-panel-datatable>
