@@ -24,10 +24,37 @@ export class PanelAttendedComponent implements OnInit{
     )
   }
 
-  public onGetIdAttended(id: number){
-    this.idProfileAttendedMove = id;
-    console.log( 'peguei id  '+this.idProfileAttendedMove)
+  public onGetIdAttendedToTrash(id: number): void {
+    this.searchProfileTrash(id);
   }
 
+  public onGetIdAttendedToAll(id: number): void {
+    this.searchProfileAll(id);
+  }
 
+  public moveProfileAttendedToProfileAll(payload: object): void {
+    this._sandbox.doDeleteListProfilesAttended(payload);
+    this._sandbox.doPostListProfilesAllJustObjetc(payload);
+  }
+
+  public moveProfileAttendedToProfileTrash(payload: object): void {
+    this._sandbox.doDeleteListProfilesAttended(payload);
+    this._sandbox.doPostListProfilesTrash(payload);
+  }
+
+  public searchProfileTrash(id: number): void {
+    this.listProfilesAttended.forEach(obj => {
+      if(obj.id == id){
+        this.moveProfileAttendedToProfileTrash(obj);
+      }
+    });
+  }
+
+  public searchProfileAll(id: number): void {
+    this.listProfilesAttended.forEach(obj => {
+      if(obj.id == id){
+        this.moveProfileAttendedToProfileAll(obj);
+      }
+    });
+  }
 }

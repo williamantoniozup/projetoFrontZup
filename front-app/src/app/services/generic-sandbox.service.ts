@@ -17,6 +17,7 @@ export class GenericSandboxService{
 
     constructor(private _httpRequest: GenericHttpService){}
 
+    //API RANDOM
     public doGetListProfiles(): void {
         // this.profiles.next(null);
         this._httpRequest.getProfiles()
@@ -44,7 +45,15 @@ export class GenericSandboxService{
         });   
     }
 
-    public doDeleteListProfilesAll(payload: object){
+    public doPostListProfilesAllJustObjetc(payload: object): void {
+        this._httpRequest.saveProfilesAll(payload).subscribe((data:any)=>{});
+    }
+
+    public doUpdateListProfilesAll(payload: object): void {
+        this._httpRequest.updateProfilesAll(payload).subscribe((data:any)=>{});
+    }   
+    
+    public doDeleteListProfilesAll(payload: object): void {
         this._httpRequest.deleteProfilesAll(payload).subscribe((data:any)=>{});
     }
 
@@ -61,7 +70,15 @@ export class GenericSandboxService{
         this._httpRequest.saveProfilesAttended(payload).subscribe((data:any)=>{});
     }
 
-    // TRASH
+    public doUpdateListProfilesAttended(payload: object): void {
+        this._httpRequest.updateProfilesAttended(payload).subscribe((data:any)=>{});
+    }
+
+    public doDeleteListProfilesAttended(payload: object): void {
+        this._httpRequest.deleteProfilesAttended(payload).subscribe((data:any)=>{});
+    }
+
+    // TRASHCAN
     public doGetListProfilesTrash(): void {
         this._httpRequest.getProfilesTrash().subscribe(
             res => {
@@ -72,6 +89,14 @@ export class GenericSandboxService{
 
     public doPostListProfilesTrash(payload: object): void {
         this._httpRequest.saveProfilesTrash(payload).subscribe((data:any)=>{});      
+    }
+
+    public doUpdateListProfilesTrash(payload: object): void {
+        this._httpRequest.updateProfilesTrash(payload).subscribe((data:any)=>{});
+    }
+
+    public doDeleteListProfilesTrash(payload: object): void {
+        this._httpRequest.deleteProfilesTrash(payload).subscribe((data:any)=>{});
     }
 
 

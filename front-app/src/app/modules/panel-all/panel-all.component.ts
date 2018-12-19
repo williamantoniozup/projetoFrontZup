@@ -10,8 +10,6 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class PanelAllComponent implements OnInit{
 
   public listProfilesAll: Profile[] = [];
-  public idProfileMoveToAttended: number;
-  public idProfileMoveToTrash: number;
 
   constructor(private _sandbox: GenericSandboxService){}  
 
@@ -20,37 +18,30 @@ export class PanelAllComponent implements OnInit{
     this._sandbox.profilesAll.subscribe(
       res => {
         this.listProfilesAll = res;
-        // console.log(this.listProfilesAll);
       }
     )
   }  
 
-  public onGetIdAttended(id: number): void {
-    // this.idProfileMoveToAttended = id;
-    // console.log( 'peguei id attended  '+id);
+  public onGetIdAllToAttended(id: number): void {
     this.searchProfileAttended(id);
   }
 
-  public onGetIdTrash(id: number): void {
-    // console.log( 'peguei id trash  '+this.idProfileMoveToTrash);
+  public onGetIdAllToTrash(id: number): void {
     this.searchProfileTrash(id);
   }
 
 
-  public moveProfileAllToProfileAttended(payload: object){
-    // console.log("imprimindo MOVE \n" + payload);
+  public moveProfileAllToProfileAttended(payload: object): void{
     this._sandbox.doDeleteListProfilesAll(payload);
     this._sandbox.doPostListProfilesAttended(payload);
-    this._sandbox.doGetListProfilesAll();
   }
 
-  public moveProfileAllToProfileTrash(payload: object){
-    // console.log("imprimindo MOVE \n" + payload);
+  public moveProfileAllToProfileTrash(payload: object): void {
     this._sandbox.doDeleteListProfilesAll(payload);
     this._sandbox.doPostListProfilesTrash(payload);
   }
 
-  public searchProfileAttended(id: number): void{
+  public searchProfileAttended(id: number): void {
     this.listProfilesAll.forEach(obj => {
       if(obj.id == id){
         this.moveProfileAllToProfileAttended(obj);
@@ -58,24 +49,11 @@ export class PanelAllComponent implements OnInit{
     });
   }
 
-  public searchProfileTrash(id: number): void{
+  public searchProfileTrash(id: number): void {
     this.listProfilesAll.forEach(obj => {
       if(obj.id == id){
         this.moveProfileAllToProfileTrash(obj);
       }
     });
   }
-
-
-  
-
-
 }
-
-/* 
-profile
-name
-email
-telefone
-city
-*/

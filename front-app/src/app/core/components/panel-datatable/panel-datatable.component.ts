@@ -9,8 +9,12 @@ import { Router } from '@angular/router';
 export class PanelDatatableComponent implements OnInit {
 
   @Input() data = []; 
-  @Output() onIdAttended = new EventEmitter<number>();
-  @Output() onIdTrash = new EventEmitter<number>();
+  @Output() onIdAllToAttended = new EventEmitter<number>();
+  @Output() onIdAllToTrash = new EventEmitter<number>();
+  @Output() onIdAttendedToTrash = new EventEmitter<number>();
+  @Output() onIdAttendedToAll = new EventEmitter<number>();
+  @Output() onIdTrashToAll = new EventEmitter<number>();
+  @Output() onIdTrashToAttended = new EventEmitter<number>();
 
   public profiles: any = [];
   public validationAll: boolean = false;
@@ -56,13 +60,29 @@ export class PanelDatatableComponent implements OnInit {
     this.validationAttended = false;
   }
 
-  public sendToAttended(id: number){
+  public sendAllToAttended(id: number): void {
     // console.log('id attended ' +id);
-    this.onIdAttended.emit(id);
+    this.onIdAllToAttended.emit(id);
   }
 
-  public sendToTrash(id: number){
+  public sendAllToTrash(id: number): void {
     // console.log('id trash ' + id)
-    this.onIdTrash.emit(id);
+    this.onIdAllToTrash.emit(id);
+  }
+
+  public sendAttendedToTrash(id: number): void {
+    this.onIdAttendedToTrash.emit(id);
+  }
+
+  public sendAttendedToAll(id: number): void {
+    this.onIdAttendedToAll.emit(id);
+  }
+
+  public sendTrashToall(id: number): void {
+    this.onIdTrashToAll.emit(id);
+  }
+
+  public sendTrashToAttended(id: number): void {
+    this.onIdTrashToAttended.emit(id);
   }
 }

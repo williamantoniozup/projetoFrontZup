@@ -7,9 +7,9 @@
                 <td class='columnEmail'><span class='emailProfile'>{{ profile.email }}</span></td>
                 <td class='columnTel'><span class='phoneProfile'>{{ profile.phone }}</span></td>
                 <td class='columnCity'><span class='cityProfile'>{{ profile.city }}</span></td>
-                <td class="columnIconSelect"><i class="small material-icons col s0.5 delete" (click)="sendToTrash(profile.id)">delete</i></td>
+                <td class="columnIconSelect"><i class="small material-icons col s0.5 delete" (click)="sendAllToTrash(profile.id)">delete</i></td>
                 <td class="columnIconSelect"><i class="small material-icons col s0.5 select_all">select_all</i></td>
-                <td class="columnIconSelect"><i class="small material-icons col s0.5 check" (click)="sendToAttended(profile.id)">check</i></td>
+                <td class="columnIconSelect"><i class="small material-icons col s0.5 check" (click)="sendAllToAttended(profile.id)">check</i></td>
             </tr>
         </tbody>
         <tbody *ngIf="validationAttended">
@@ -19,8 +19,8 @@
                 <td class='columnEmail'><span class='emailProfile'>{{ profile.email }}</span></td>
                 <td class='columnTel'><span class='phoneProfile'>{{ profile.phone }}</span></td>
                 <td class='columnCity'><span class='cityProfile'>{{ profile.city }}</span></td>
-                <td class="columnIconSelect"><i class="small material-icons col s0.5 delete">delete</i></td>
-                <td class="columnIconSelect"><i class="small material-icons col s0.5 select_all">select_all</i></td>
+                <td class="columnIconSelect"><i class="small material-icons col s0.5 delete" (click)="sendAttendedToTrash(profile.id)">delete</i></td>
+                <td class="columnIconSelect"><i class="small material-icons col s0.5 select_all" (click)="sendAttendedToAll(profile.id)">select_all</i></td>
             </tr>
         </tbody>
         <tbody *ngIf="validationTrash">
@@ -30,9 +30,10 @@
                 <td class='columnEmail'><span class='emailProfile'>{{ profile.email }}</span></td>
                 <td class='columnTel'><span class='phoneProfile'>{{ profile.phone }}</span></td>
                 <td class='columnCity'><span class='cityProfile'>{{ profile.city }}</span></td>
-                <td class="columnIconSelect"><i class="small material-icons col s0.5 select_all">select_all</i></td>
-                <td class="columnIconSelect"><i class="small material-icons col s0.5 check">check</i></td>
+                <td class="columnIconSelect"><i class="small material-icons col s0.5 select_all" (click)="sendTrashToall(profile.id)">select_all</i></td>
+                <td class="columnIconSelect"><i class="small material-icons col s0.5 check" (click)="sendTrashToAttended(profile.id)">check</i></td>
             </tr>
         </tbody>
     </table>
 </div>
+
