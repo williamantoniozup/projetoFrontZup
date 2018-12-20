@@ -29,4 +29,9 @@ export class HeaderComponent{
   public applyFilter(event: any){
     this.textSearch.emit(event);
   }
+
+  // public applyEnterTextInput(event): void {
+  //   this._sandbox.changeTextSearch(event);
+  // (keyup.enter)="applyEnterTextInput($event.target.value)"
+  // }
 }
