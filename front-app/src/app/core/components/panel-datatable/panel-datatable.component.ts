@@ -1,6 +1,8 @@
-import { filter } from 'rxjs/operators';
+import { ModalComponent } from './../modal/modal.component';
+import { MzModalService } from 'ngx-materialize';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { MzPaginationModule } from 'ngx-materialize';
 
 @Component({
   selector: 'app-panel-datatable',
@@ -24,7 +26,7 @@ export class PanelDatatableComponent implements OnInit {
   public validationTrash: boolean = false;
   public href: string = '';
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private modalService: MzModalService){}
 
   ngOnInit(): void {
     this.href = this.router.url;
