@@ -1,8 +1,19 @@
-div.modal.modal-fixed-footer.open{
-    background: -webkit-linear-gradient(top,  rgb(194, 194, 194),  rgb(194, 194, 194) 50%,white 50%, white) !important;
-}
 
 .containerFooter{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 200px;
+}
+::ng-deep .modal{
+    background: -webkit-linear-gradient(top,  #f2f2f2,  #f2f2f2 50%,white 50%, white) !important;
+} 
+::ng-deep .modal.modal-fixed-footer .modal-footer {
+    border-top: none !important;
+    background-color: white;
+}
+
+.imgProfileModal{
     display: flex;
     justify-content: center;
 }

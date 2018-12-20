@@ -16,7 +16,7 @@ import { ROUTES } from './app.routes';
 import { PanelAllComponent } from './modules/panel-all/panel-all.component';
 import { PanelAttendedComponent } from './modules/panel-attended/panel-attended.component';
 import { PanelTrashComponent } from './modules/panel-trash/panel-trash.component';
-import { MzModalModule } from 'ngx-materialize'
+import { MzModalModule, MzPaginationModule  } from 'ngx-materialize'
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -36,6 +36,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserModule,
     HttpClientModule,
     MzModalModule,
+    MzPaginationModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
     RouterModule.forRoot(ROUTES),

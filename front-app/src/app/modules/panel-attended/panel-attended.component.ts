@@ -16,12 +16,7 @@ export class PanelAttendedComponent implements OnInit{
 
 
   ngOnInit(): void{
-    this._sandbox.doGetListProfilesAttended();
-    this._sandbox.profilesAttended.subscribe(
-      res => {
-        this.listProfilesAttended = res;
-      }
-    )
+    this.loadListAll();
     this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }
 
@@ -34,12 +29,12 @@ export class PanelAttendedComponent implements OnInit{
   }
 
   public moveProfileAttendedToProfileAll(payload: object): void {
-    this._sandbox.doDeleteListProfilesAttended(payload);
+    this._sandbox.doDeleteListProfilesAttended(payload).subscribe((data:any)=>{ this.loadListAll()});
     this._sandbox.doPostListProfilesAllJustObjetc(payload);
   }
 
   public moveProfileAttendedToProfileTrash(payload: object): void {
-    this._sandbox.doDeleteListProfilesAttended(payload);
+    this._sandbox.doDeleteListProfilesAttended(payload).subscribe((data:any)=>{ this.loadListAll()});
     this._sandbox.doPostListProfilesTrash(payload);
   }
 
@@ -57,5 +52,14 @@ export class PanelAttendedComponent implements OnInit{
         this.moveProfileAttendedToProfileAll(obj);
       }
     });
+  }
+
+  public loadListAll(): void{
+    this._sandbox.doGetListProfilesAttended();
+    this._sandbox.profilesAttended.subscribe(
+      res => {
+        this.listProfilesAttended = res;
+      }
+    )
   }
 }

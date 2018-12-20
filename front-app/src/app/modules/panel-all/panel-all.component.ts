@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angu
   templateUrl: './panel-all.component.html',
   styleUrls: ['./panel-all.component.css']
 })
-export class PanelAllComponent implements OnInit, OnChanges{
+export class PanelAllComponent implements OnInit {
 
   public listProfilesAll: Profile[] = [];
   public textSearchSmart: string;
@@ -17,17 +17,9 @@ export class PanelAllComponent implements OnInit, OnChanges{
   }  
 
   ngOnInit(): void {
-    this._sandbox.doGetListProfilesAll();
-    this._sandbox.profilesAll.subscribe(
-      res => {
-        this.listProfilesAll = res;
-      }
-    )
+    this.loadListAll();
     this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }  
-
-  ngOnChanges(): void {
-  }
 
   public onGetIdAllToAttended(id: number): void {
     this.searchProfileAttended(id);
@@ -39,12 +31,12 @@ export class PanelAllComponent implements OnInit, OnChanges{
 
 
   public moveProfileAllToProfileAttended(payload: object): void{
-    this._sandbox.doDeleteListProfilesAll(payload);
+    this._sandbox.doDeleteListProfilesAll(payload).subscribe((data:any)=>{ this.loadListAll()});
     this._sandbox.doPostListProfilesAttended(payload);
   }
 
   public moveProfileAllToProfileTrash(payload: object): void {
-    this._sandbox.doDeleteListProfilesAll(payload);
+    this._sandbox.doDeleteListProfilesAll(payload).subscribe((data:any)=>{ this.loadListAll()});
     this._sandbox.doPostListProfilesTrash(payload);
   }
 
@@ -62,5 +54,14 @@ export class PanelAllComponent implements OnInit, OnChanges{
         this.moveProfileAllToProfileTrash(obj);
       }
     });
+  }
+
+  public loadListAll(): void{
+    this._sandbox.doGetListProfilesAll();
+    this._sandbox.profilesAll.subscribe(
+      res => {
+        this.listProfilesAll = res;
+      }
+    )
   }
 }

@@ -70,8 +70,8 @@ export class GenericSandboxService{
         this._httpRequest.updateProfilesAll(payload).subscribe((data:any)=>{});
     }   
     
-    public doDeleteListProfilesAll(payload: object): void {
-        this._httpRequest.deleteProfilesAll(payload).subscribe((data:any)=>{});
+    public doDeleteListProfilesAll(payload: object) {
+        return this._httpRequest.deleteProfilesAll(payload);
     }
 
     // ATTENDED
@@ -91,8 +91,8 @@ export class GenericSandboxService{
         this._httpRequest.updateProfilesAttended(payload).subscribe((data:any)=>{});
     }
 
-    public doDeleteListProfilesAttended(payload: object): void {
-        this._httpRequest.deleteProfilesAttended(payload).subscribe((data:any)=>{});
+    public doDeleteListProfilesAttended(payload: object) {
+        return this._httpRequest.deleteProfilesAttended(payload);
     }
 
     // TRASHCAN
@@ -112,10 +112,10 @@ export class GenericSandboxService{
         this._httpRequest.updateProfilesTrash(payload).subscribe((data:any)=>{});
     }
 
-    public doDeleteListProfilesTrash(payload: object): void {
-        this._httpRequest.deleteProfilesTrash(payload).subscribe((data:any)=>{});
+    public doDeleteListProfilesTrash(payload: object) {
+        return this._httpRequest.deleteProfilesTrash(payload);
     }
-
+    
     public formatPayloadProfiles(payload: any): Array<Profile> {
         const listProfileAux: Profile[] = [];
 
