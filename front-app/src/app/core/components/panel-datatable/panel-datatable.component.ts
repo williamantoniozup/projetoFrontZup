@@ -1,6 +1,8 @@
-import { filter } from 'rxjs/operators';
+import { ModalComponent } from './../modal/modal.component';
+import { MzModalService } from 'ngx-materialize';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { MzPaginationModule } from 'ngx-materialize';
 
 @Component({
   selector: 'app-panel-datatable',
@@ -24,7 +26,7 @@ export class PanelDatatableComponent implements OnInit {
   public validationTrash: boolean = false;
   public href: string = '';
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private modalService: MzModalService){}
 
   ngOnInit(): void {
     this.href = this.router.url;
@@ -42,11 +44,7 @@ export class PanelDatatableComponent implements OnInit {
     if(this.data.length > 0){
       this.profiles = this.data;
     }
-    this.profiles = this.profiles.filter((profile: any) => {
-      if(!this.textSearch)
-        return this.data;
-      return profile.name == this.textSearch || profile.email == this.textSearch;
-    })
+    this.filterProfiles();
   }
 
   public setTableAll(): void {
@@ -68,12 +66,10 @@ export class PanelDatatableComponent implements OnInit {
   }
 
   public sendAllToAttended(id: number): void {
-    // console.log('id attended ' +id);
     this.onIdAllToAttended.emit(id);
   }
 
   public sendAllToTrash(id: number): void {
-    // console.log('id trash ' + id)
     this.onIdAllToTrash.emit(id);
   }
 
@@ -93,9 +89,15 @@ export class PanelDatatableComponent implements OnInit {
     this.onIdTrashToAttended.emit(id);
   }
 
-  public filterProfiles(text: string): any {
-    this.profiles.filter((profile) => {
-
+  public filterProfiles(): any {
+    this.profiles = this.profiles.filter((profile: any) => {
+      if(!this.textSearch)
+        return this.data;
+      return profile.name == this.textSearch || profile.email == this.textSearch;
     })
+  }
+
+  public openServiceModal() {
+    this.modalService.open(ModalComponent);
   }
 }

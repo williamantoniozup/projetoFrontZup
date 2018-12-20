@@ -35,11 +35,11 @@ tr.profileRow > td.columnImgProfile > .imgProfile {
 }
 
 td.columnImgProfile {
-  padding-left: 25px;
+  padding-left: 75px;
 }
 
 td.columnIconDelete td.columnIconSelect td.columnIconCheck {
-  padding: 10px 10px;
+  padding: 10px 0px;
 }
 
 i.delete{
@@ -64,6 +64,13 @@ span.nameProfile{
 
 span.emailProfile, span.phoneProfile, span.cityProfile{
   color:#868489c9;
+}
+
+i.small{
+  font-size: 1.4rem !important;
+}
+.waves-effect{
+  overflow: visible !important;
 }
 
 .active {

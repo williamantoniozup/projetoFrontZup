@@ -11,3 +11,8 @@ body {
   min-height: 100%;
   width: 100%;
 }
+
+.modal-overlay{
+  background: -webkit-linear-gradient(top, #013750,  #013750 50%, rgb(194, 194, 194) 50%, rgb(194, 194, 194)) !important;
+  opacity: unset !important;
+}
