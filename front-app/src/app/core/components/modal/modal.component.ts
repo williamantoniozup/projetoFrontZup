@@ -6,5 +6,5 @@ import { MzBaseModal, MzModalComponent } from 'ngx-materialize';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
-export class ModalComponent{
+export class ModalComponent extends MzBaseModal{
 }

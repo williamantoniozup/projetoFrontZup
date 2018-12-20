@@ -2,8 +2,8 @@
     <table class="tablePerfil responsive-table">
         <tbody *ngIf="validationAll">
             <tr class="profileRow" *ngFor="let profile of profiles">
-                <td class='columnImgProfile waves-effect'><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
-                <td class='columnName waves-effect'><span class='nameProfile'><b>{{ profile.name }}</b></span></td>
+                <td class='columnImgProfile waves-effect' (click)="openServiceModal()"><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
+                <td class='columnName waves-effect' (click)="openServiceModal()"><span class='nameProfile'><b>{{ profile.name }}</b></span></td>
                 <td class='columnEmail'><span class='emailProfile'>{{ profile.email }}</span></td>
                 <td class='columnTel'><span class='phoneProfile'>{{ profile.phone }}</span></td>
                 <td class='columnCity'><span class='cityProfile'>{{ profile.city }}</span></td>
@@ -14,8 +14,8 @@
         </tbody>
         <tbody *ngIf="validationAttended">
             <tr class="profileRow" *ngFor="let profile of profiles">
-                <td class='columnImgProfile waves-effect'><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
-                <td class='columnName waves-effect'><span class='nameProfile'><b>{{ profile.name }}</b></span></td>
+                <td class='columnImgProfile waves-effect' (click)="openServiceModal()"><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
+                <td class='columnName waves-effect' (click)="openServiceModal()"><span class='nameProfile'><b>{{ profile.name }}</b></span></td>
                 <td class='columnEmail'><span class='emailProfile'>{{ profile.email }}</span></td>
                 <td class='columnTel'><span class='phoneProfile'>{{ profile.phone }}</span></td>
                 <td class='columnCity'><span class='cityProfile'>{{ profile.city }}</span></td>
@@ -25,8 +25,8 @@
         </tbody>
         <tbody *ngIf="validationTrash">
             <tr class="profileRow" *ngFor="let profile of profiles">
-                <td class='columnImgProfile waves-effect'><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
-                <td class='columnName waves-effect'><span class='nameProfile'><b>{{ profile.name }}</b></span></td>
+                <td class='columnImgProfile waves-effect' (click)="openServiceModal()"><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
+                <td class='columnName waves-effect' (click)="openServiceModal()"><span class='nameProfile'><b>{{ profile.name }}</b></span></td>
                 <td class='columnEmail'><span class='emailProfile'>{{ profile.email }}</span></td>
                 <td class='columnTel'><span class='phoneProfile'>{{ profile.phone }}</span></td>
                 <td class='columnCity'><span class='cityProfile'>{{ profile.city }}</span></td>
@@ -36,4 +36,3 @@
         </tbody>
     </table>
 </div>
-<app-modal></app-modal>

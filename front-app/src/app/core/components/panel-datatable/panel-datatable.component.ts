@@ -96,4 +96,8 @@ export class PanelDatatableComponent implements OnInit {
       return profile.name == this.textSearch || profile.email == this.textSearch;
     })
   }
+
+  public openServiceModal() {
+    this.modalService.open(ModalComponent);
+  }
 }

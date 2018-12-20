@@ -45,6 +45,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     GenericHttpService,
     GenericSandboxService
   ],
+  entryComponents: [
+    ModalComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

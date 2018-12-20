@@ -1,0 +1,8 @@
+div.modal.modal-fixed-footer.open{
+    background: -webkit-linear-gradient(top,  rgb(194, 194, 194),  rgb(194, 194, 194) 50%,white 50%, white) !important;
+}
+
+.containerFooter{
+    display: flex;
+    justify-content: center;
+}
