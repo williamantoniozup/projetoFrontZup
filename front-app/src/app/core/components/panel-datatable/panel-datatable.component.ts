@@ -100,4 +100,8 @@ export class PanelDatatableComponent implements OnInit {
   public openServiceModal() {
     this.modalService.open(ModalComponent);
   }
+
+  public onPageChange(event){
+    console.log(event);
+  }
 }

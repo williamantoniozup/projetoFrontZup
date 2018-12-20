@@ -1,8 +1,15 @@
 <mz-modal #bottomSheetModal [fixedFooter]="true" [options]="modalOptions">
   <button mz-anchor mz-modal-close>sdadas</button>
-  <mz-modal-header> <h4>Modal Title</h4> </mz-modal-header>
-  <mz-modal-content class="contentContainer"> </mz-modal-content>
-  <mz-modal-footer>
+  <mz-modal-header></mz-modal-header>
+  <mz-modal-content> 
+    <div class="containerContent">
+      <div class="containerImgProfile">
+        <img class="imgProfileModal" src=" https://randomuser.me/api/portraits/men/65.jpg ">
+      </div>
+      <div class="containerInfos"></div>
+    </div>
+  </mz-modal-content>
+  <mz-modal-footer class="modalFooter">
     <div class="containerFooter">
       <i class="material-icons"> perm_identity </i>
       <i class="material-icons"> mail </i>

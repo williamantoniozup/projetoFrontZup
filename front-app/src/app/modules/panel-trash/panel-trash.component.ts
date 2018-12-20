@@ -15,12 +15,7 @@ export class PanelTrashComponent implements OnInit {
   constructor(private _sandbox: GenericSandboxService){} 
   
   ngOnInit(): void {
-    this._sandbox.doGetListProfilesTrash();
-    this._sandbox.profilesTrash.subscribe(
-      res => {
-        this.listProfilesTrash = res;
-      }
-    )
+    this.loadListAll();
     this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }
 
@@ -33,12 +28,12 @@ export class PanelTrashComponent implements OnInit {
   }
 
   public moveProfileTrashToProfileAll(payload: object): void {
-    this._sandbox.doDeleteListProfilesTrash(payload);
+    this._sandbox.doDeleteListProfilesTrash(payload).subscribe((data:any)=>{this.loadListAll();});
     this._sandbox.doPostListProfilesAllJustObjetc(payload);
   }
 
   public moveProfileTrashToProfileAttended(payload: object): void {
-    this._sandbox.doDeleteListProfilesTrash(payload);
+    this._sandbox.doDeleteListProfilesTrash(payload).subscribe((data:any)=>{this.loadListAll();});
     this._sandbox.doPostListProfilesAttended(payload);
   }
 
@@ -56,5 +51,14 @@ export class PanelTrashComponent implements OnInit {
         this.moveProfileTrashToProfileAttended(obj);
       }
     });
+  }
+
+  public loadListAll(): void{
+    this._sandbox.doGetListProfilesTrash();
+    this._sandbox.profilesTrash.subscribe(
+      res => {
+        this.listProfilesTrash = res;
+      }
+    )
   }
 }

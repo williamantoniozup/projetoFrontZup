@@ -34,5 +34,12 @@
                 <td class="columnIconCheck"><i class="small material-icons col s0.5 check" (click)="sendTrashToAttended(profile.id)">check</i></td>
             </tr>
         </tbody>
+        <mz-pagination
+            (pageChange)="onPageChange($event)"
+            [currentPage]="1"
+            [enableFirstAndLastPageButtons]="false"
+            [itemsPerPage]="10"
+            [totalItems]="100">
+        </mz-pagination>
     </table>
 </div>
