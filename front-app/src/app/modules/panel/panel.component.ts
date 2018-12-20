@@ -29,7 +29,6 @@ export class PanelComponent implements OnChanges, OnInit {
     )
   }
   ngOnChanges(): void {
-    // console.log(this.textSearchSon);
     this._sandbox.changeTextSearch(this.textSearchSon);
   }
 }

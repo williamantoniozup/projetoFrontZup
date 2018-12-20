@@ -10,8 +10,7 @@ import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angu
 export class PanelAllComponent implements OnInit, OnChanges{
 
   public listProfilesAll: Profile[] = [];
-  @Input() public textSearch: string;
-  public textSearchPanelAll: string;
+  public textSearchSmart: string;
 
   constructor(private _sandbox: GenericSandboxService){
     
@@ -24,11 +23,10 @@ export class PanelAllComponent implements OnInit, OnChanges{
         this.listProfilesAll = res;
       }
     )
+    this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }  
 
   ngOnChanges(): void {
-    this._sandbox.currentTextSearch$.subscribe(message => this.textSearchPanelAll = message);
-    console.log('insissssde son', this.textSearchPanelAll);
   }
 
   public onGetIdAllToAttended(id: number): void {

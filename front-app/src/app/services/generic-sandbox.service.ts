@@ -16,7 +16,6 @@ export class GenericSandboxService{
     public profilesImage: Subject<Profile[]> = new Subject<Profile[]>();
     public listProfiles: Profile[] = [];
     public textSearch = new Subject<string>();
-    public currentTextSearch$ = this.textSearch.asObservable();
     
     constructor(private _httpRequest: GenericHttpService){}
 
