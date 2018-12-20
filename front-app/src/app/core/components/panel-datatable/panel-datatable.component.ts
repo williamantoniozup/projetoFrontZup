@@ -42,11 +42,7 @@ export class PanelDatatableComponent implements OnInit {
     if(this.data.length > 0){
       this.profiles = this.data;
     }
-    this.profiles = this.profiles.filter((profile: any) => {
-      if(!this.textSearch)
-        return this.data;
-      return profile.name == this.textSearch || profile.email == this.textSearch;
-    })
+    this.filterProfiles();
   }
 
   public setTableAll(): void {
@@ -68,12 +64,10 @@ export class PanelDatatableComponent implements OnInit {
   }
 
   public sendAllToAttended(id: number): void {
-    // console.log('id attended ' +id);
     this.onIdAllToAttended.emit(id);
   }
 
   public sendAllToTrash(id: number): void {
-    // console.log('id trash ' + id)
     this.onIdAllToTrash.emit(id);
   }
 
@@ -93,9 +87,11 @@ export class PanelDatatableComponent implements OnInit {
     this.onIdTrashToAttended.emit(id);
   }
 
-  public filterProfiles(text: string): any {
-    this.profiles.filter((profile) => {
-
+  public filterProfiles(): any {
+    this.profiles = this.profiles.filter((profile: any) => {
+      if(!this.textSearch)
+        return this.data;
+      return profile.name == this.textSearch || profile.email == this.textSearch;
     })
   }
 }
