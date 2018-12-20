@@ -3,7 +3,7 @@
     <div class="nav-wrapper">
       <div class="row">
         <div class="classLogo col s2">
-          <img class="responsive" src="/assets/image/logoZupHeader.png" />
+          <img class="responsive" src="/assets/image/logoZupHeader.png"/>
         </div>
         <div id="containerInput" class="col s8">
           <div class="col s0 containerIconLupa">
@@ -15,11 +15,12 @@
               placeholder="Buscar"
               id="autocomplete-input"
               class="autocomplete black-text"
+              (keyup)="applyFilter($event.target.value)"
             />
           </div>
         </div>
         <div class="containerPerfil col s2">
-          <i id="iconPerfil" class="large material-icons">account_circle</i>
+            <img class="imgAccount" src="{{ urlImg }}"/>
         </div>
       </div>
     </div>

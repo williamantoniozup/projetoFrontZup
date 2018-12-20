@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class PanelAttendedComponent implements OnInit{
 
   public listProfilesAttended: Profile[] = [];
-  public idProfileAttendedMove: number;
+  public textSearchSmart: string;
 
   constructor(private _sandbox: GenericSandboxService){}
 
@@ -22,6 +22,7 @@ export class PanelAttendedComponent implements OnInit{
         this.listProfilesAttended = res;
       }
     )
+    this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }
 
   public onGetIdAttendedToTrash(id: number): void {

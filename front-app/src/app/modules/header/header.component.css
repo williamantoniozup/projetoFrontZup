@@ -61,3 +61,14 @@ img.responsive {
   display: flex;
   justify-content: flex-end;
 }
+
+.imgAccount{
+  width: 45px;
+  right: 45px;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 8px;
+  max-width: 100%;
+  min-width: 0px;
+  min-height: 10px;
+}

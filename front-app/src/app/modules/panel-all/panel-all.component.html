@@ -1,5 +1,6 @@
 <app-panel-datatable 
     [data]="listProfilesAll"
     (onIdAllToAttended)="onGetIdAllToAttended($event)"
-    (onIdAllToTrash)="onGetIdAllToTrash($event)">
+    (onIdAllToTrash)="onGetIdAllToTrash($event)"
+    [textSearch]="textSearchSmart">
 </app-panel-datatable>

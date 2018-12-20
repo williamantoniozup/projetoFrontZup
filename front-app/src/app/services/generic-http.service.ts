@@ -10,6 +10,7 @@ export class GenericHttpService {
 
     // ENDPOINT API RANDOMUSER
     public getProfiles(): Observable<any>{return this._http.get('https://randomuser.me/api/?results=1');}
+    public getImageProfileAccount(): Observable<any>{return this._http.get('https://randomuser.me/api/?results=1');}
 
     // ENDPOINT PROFILESALL
     public getProfilesAll(): Observable<any>{return this._http.get('http://localhost:3000/profiles');}

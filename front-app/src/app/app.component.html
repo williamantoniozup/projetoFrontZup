@@ -9,11 +9,11 @@
 -->
 <div class="containerGeral">
 
-  <div class="header"><app-header></app-header></div>
+  <div class="header"><app-header (textSearch)="filterText($event)"></app-header></div>
 
   <div class="containerMain row">
     <div class="col-1.5 menu"><app-menu></app-menu></div>
-    <div class="col-10"><app-panel></app-panel></div>
+    <div class="col-10"><app-panel [textSearchSon]="textSearchFather"></app-panel></div>
   </div>
 
   <div class="footer"><p class="textFooter">Desafio front-end app.</p></div>

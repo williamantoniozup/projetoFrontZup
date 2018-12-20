@@ -1,6 +1,6 @@
 import { GenericHttpService } from './generic-http.service';
-import { Injectable } from "@angular/core";
-import { Observable, Subject } from 'rxjs';
+import { Injectable, EventEmitter } from "@angular/core";
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { Profile } from '../models/profile.model';
 import { filter, map } from 'rxjs/operators';
 
@@ -13,9 +13,15 @@ export class GenericSandboxService{
     public profilesAll: Subject<Profile[]> = new Subject<Profile[]>();
     public profilesAttended: Subject<Profile[]> = new Subject<Profile[]>();
     public profilesTrash: Subject<Profile[]> = new Subject<Profile[]>();
+    public profilesImage: Subject<Profile[]> = new Subject<Profile[]>();
     public listProfiles: Profile[] = [];
-
+    public textSearch = new Subject<string>();
+    
     constructor(private _httpRequest: GenericHttpService){}
+
+    public changeTextSearch(text: string): void {
+        this.textSearch.next(text);
+    }
 
     //API RANDOM
     public doGetListProfiles(): void {
@@ -26,6 +32,17 @@ export class GenericSandboxService{
             (response) => {
                 this.listProfiles = this.formatPayloadProfiles(response);
                 this.profiles.next(this.listProfiles);
+            }
+        );
+    }
+
+    public doGetImageProfileAccount(): void {
+        this._httpRequest.getImageProfileAccount()
+        .pipe(map((res) => res.results))
+        .subscribe(
+            (response) => {
+                this.listProfiles = this.formatPayloadProfiles(response);
+                this.profilesImage.next(this.listProfiles);
             }
         );
     }
@@ -99,7 +116,6 @@ export class GenericSandboxService{
         this._httpRequest.deleteProfilesTrash(payload).subscribe((data:any)=>{});
     }
 
-
     public formatPayloadProfiles(payload: any): Array<Profile> {
         const listProfileAux: Profile[] = [];
 
@@ -122,4 +138,6 @@ export class GenericSandboxService{
         });
         return listProfileAux;
     }
+
+
 }

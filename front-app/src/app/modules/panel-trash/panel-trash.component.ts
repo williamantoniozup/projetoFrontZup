@@ -10,6 +10,7 @@ import { Profile } from 'src/app/models/profile.model';
 export class PanelTrashComponent implements OnInit {
   
   public listProfilesTrash: Profile[] = [];
+  public textSearchSmart: string;
 
   constructor(private _sandbox: GenericSandboxService){} 
   
@@ -20,6 +21,7 @@ export class PanelTrashComponent implements OnInit {
         this.listProfilesTrash = res;
       }
     )
+    this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }
 
   public onGetIdTrashToAll(id: number): void {
