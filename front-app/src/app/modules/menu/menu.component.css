@@ -70,6 +70,10 @@
   height: 800px;
 }
 
+.attended{
+  background: transparent;
+}
+
 .active {
   color: #a7d21e;
 }

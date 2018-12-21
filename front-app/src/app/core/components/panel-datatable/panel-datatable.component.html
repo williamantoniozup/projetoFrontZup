@@ -3,7 +3,7 @@
     <mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="imgProfile">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-        <mat-cell *matCellDef="let element" (click)="openServiceModal(element)"
+        <mat-cell class="imgProfile" *matCellDef="let element" (click)="openServiceModal(element)"
           ><img class="imgProfile" src="{{ element.imgProfile }}"
         /></mat-cell>
       </ng-container>
