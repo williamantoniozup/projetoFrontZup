@@ -4,6 +4,7 @@
     justify-content: space-between;
     width: 50%;
     margin-left: 200px;
+    color:#86848997;
 }
 ::ng-deep .modal{
     background: -webkit-linear-gradient(top,  #f2f2f2,  #f2f2f2 50%,white 50%, white) !important;
@@ -16,4 +17,37 @@
 .imgProfileModal{
     display: flex;
     justify-content: center;
+    margin-left: 43%;
+    margin-top: 20%;
+    border-radius: 50%;
+
+}
+
+.containerFooter :hover{
+    color: #a7d21e;
+}
+
+.material-icons{
+    font-size: 40px;
+}
+
+.infosModal{
+    margin-left: 43%;
+}
+
+.infosModalDefault{
+    color:#86848997;
+    font-size: 20px;
+}
+
+.infosModalDinamic{
+    color: #013750;
+    font-size: 50px;
+}
+
+
+.infosModalDinamic2{
+    color: #013750;
+    font-size: 30px;
+    margin-right: 50%;
 }

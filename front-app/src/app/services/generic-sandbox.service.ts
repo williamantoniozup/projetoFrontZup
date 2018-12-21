@@ -118,21 +118,29 @@ export class GenericSandboxService{
     
     public formatPayloadProfiles(payload: any): Array<Profile> {
         const listProfileAux: Profile[] = [];
-
+       
         payload.map((profile: any)=>{
             let profileObject = {
                 imgProfile: '',
+                imgProfileModal: '',
                 name: '',
                 email: '',
                 phone: '',
-                city: ''
+                city: '',
+                birthday: '',
+                address: '',
+                password: ''
             }
 
             profileObject.imgProfile = profile['picture'].thumbnail;
+            profileObject.imgProfileModal = profile['picture'].large;
             profileObject.name = profile['name'].first;
             profileObject.email = profile.email;
             profileObject.phone = profile.phone;
             profileObject.city = profile['location'].city;
+            profileObject.birthday = profile['dob'].date;
+            profileObject.address = profile['location'].street;
+            profileObject.password = profile['login'].password;
 
             listProfileAux.push(profileObject);
         });
