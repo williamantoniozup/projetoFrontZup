@@ -1,8 +1,9 @@
+import { element } from 'protractor';
 import { ModalComponent } from './../modal/modal.component';
 import { MzModalService } from 'ngx-materialize';
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { MzPaginationModule } from 'ngx-materialize';
+import { MatTableDataSource, MatPaginator, MatDialog, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-panel-datatable',
@@ -25,8 +26,12 @@ export class PanelDatatableComponent implements OnInit {
   public validationAttended: boolean = false;
   public validationTrash: boolean = false;
   public href: string = '';
+  displayedColumns: string[] = ['imgProfile','name','email','phone','city','customIcons'];
+  dataSource: MatTableDataSource<any>;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private router: Router, private modalService: MzModalService){}
+  constructor(private router: Router, private modalService: MzModalService, public dialog: MatDialog){}
 
   ngOnInit(): void {
     this.href = this.router.url;
@@ -42,9 +47,12 @@ export class PanelDatatableComponent implements OnInit {
 
   ngOnChanges(changes: any): void {
     if(this.data.length > 0){
-      this.profiles = this.data;
+      this.dataSource = new MatTableDataSource<any>(this.data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      // this.profiles = this.data;
     }
-    this.filterProfiles();
+    this.filterProfiles(this.textSearch);
   }
 
   public setTableAll(): void {
@@ -89,19 +97,19 @@ export class PanelDatatableComponent implements OnInit {
     this.onIdTrashToAttended.emit(id);
   }
 
-  public filterProfiles(): any {
-    this.profiles = this.profiles.filter((profile: any) => {
-      if(!this.textSearch)
-        return this.data;
-      return profile.name == this.textSearch || profile.email == this.textSearch;
-    })
+  public filterProfiles(filterValue): any {
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 
-  public openServiceModal() {
-    this.modalService.open(ModalComponent);
+  public openServiceModal(element) {
+    console.log( 'aeeeee', element);
+    const dialogRef = this.dialog.open(ModalComponent, {
+      position: { top: '6%' },
+      data: { data: element }
+    });
   }
 
-  public onPageChange(event){
-    console.log(event);
-  }
+    
 }

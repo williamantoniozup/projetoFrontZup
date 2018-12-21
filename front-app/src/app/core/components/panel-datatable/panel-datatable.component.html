@@ -1,5 +1,68 @@
 <div class="containerDatatable row">
-    <table class="tablePerfil responsive-table">
+  
+    <mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="imgProfile">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="openServiceModal(element)"
+          ><img class="imgProfile" src="{{ element.imgProfile }}"
+        /></mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="openServiceModal(element)">{{ element.name }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.phone }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="city">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="customIcons">
+        <div *ngIf="validationAll">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <i class="small material-icons col s0.5 delete" (click)="sendAllToTrash(element.id)" >delete</i>
+            <i class="small material-icons col s0.5 select_all">select_all</i>
+            <i class="small material-icons col s0.5 check" (click)="sendAllToAttended(element.id)">check</i>
+          </mat-cell>
+        </div>
+        <div *ngIf="validationAttended">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <i class="small material-icons col s0.5 delete" (click)="sendAttendedToTrash(element.id)">delete</i>
+            <i class="small material-icons col s0.5 select_all" (click)="sendAttendedToAll(element.id)">select_all</i>
+          </mat-cell>
+        </div>
+        <div *ngIf="validationTrash">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <i class="small material-icons col s0.5 select_all" (click)="sendTrashToall(element.id)">select_all</i>
+            <i class="small material-icons col s0.5 check" (click)="sendTrashToAttended(element.id)">check</i>
+          </mat-cell>
+        </div>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+
+    <mat-paginator
+      [pageSizeOptions]="[10]"
+      showFirstLastButtons
+    ></mat-paginator>
+  
+</div>
+
+<!-- 
+<div class="containerDatatable row">
+    <table datatable class="tablePerfil responsive-table" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
         <tbody *ngIf="validationAll">
             <tr class="profileRow" *ngFor="let profile of profiles">
                 <td class='columnImgProfile waves-effect' (click)="openServiceModal()"><img class='imgProfile' src="{{ profile.imgProfile }}"></td>
@@ -34,12 +97,6 @@
                 <td class="columnIconCheck"><i class="small material-icons col s0.5 check" (click)="sendTrashToAttended(profile.id)">check</i></td>
             </tr>
         </tbody>
-        <mz-pagination
-            (pageChange)="onPageChange($event)"
-            [currentPage]="1"
-            [enableFirstAndLastPageButtons]="false"
-            [itemsPerPage]="10"
-            [totalItems]="100">
-        </mz-pagination>
     </table>
 </div>
+ -->

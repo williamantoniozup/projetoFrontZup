@@ -18,6 +18,8 @@ import { PanelAttendedComponent } from './modules/panel-attended/panel-attended.
 import { PanelTrashComponent } from './modules/panel-trash/panel-trash.component';
 import { MzModalModule, MzPaginationModule  } from 'ngx-materialize'
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { DataTablesModule } from 'angular-datatables';
+import { MatTableModule, MatPaginatorModule, MatDialogModule } from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -36,11 +38,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserModule,
     HttpClientModule,
     MzModalModule,
+    DataTablesModule,
     MzPaginationModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
     RouterModule.forRoot(ROUTES),
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [
     GenericHttpService,
