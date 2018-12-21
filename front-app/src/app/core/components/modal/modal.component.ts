@@ -15,6 +15,16 @@ export class ModalComponent extends MzBaseModal{
   public hasValidPhone: boolean = false;
   public hasValidPassword: boolean = false;
 
+  public modalOptions: Materialize.ModalOptions = {
+    dismissible: false, // Modal can be dismissed by clicking outside of the modal
+    opacity: .5, // Opacity of modal background
+    inDuration: 100, // Transition in duration
+    outDuration: 200, // Transition out duration
+    startingTop: '100%', // Starting top style attribute
+    endingTop: '10%', // Ending top style attribute
+  };
+
+
   public infoName(){
     this.hasValidName = true;
     this.hasValidEmail = this.hasValidBirthday = this.hasValidAddress = this.hasValidPhone = this.hasValidPassword = false;

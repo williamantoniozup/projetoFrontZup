@@ -1,5 +1,7 @@
 <mz-modal #bottomSheetModal [fixedFooter]="true" [options]="modalOptions">
-  <mz-modal-header></mz-modal-header>
+  <mz-modal-header>
+    <button mz-button [flat]="true" mz-modal-close>Close</button>
+  </mz-modal-header>
   <mz-modal-content> 
     <div class="containerContent">
       <div class="containerImgProfile">
@@ -16,19 +18,19 @@
         </div>
         <div class="infosModal birthdayModal" *ngIf="hasValidBirthday">
           <div class="infosModalDefault">My birthday is</div>
-          <div class="infosModalDinamic">{{ myPropertyModal.birthday }}</div>
+          <div class="infosModalDinamic3">{{ myPropertyModal.birthday }}</div>
         </div>
         <div class="infosModal addressModal" *ngIf="hasValidAddress">
           <div class="infosModalDefault">My address is</div>
-          <div class="infosModalDinamic">{{ myPropertyModal.address }}</div>
+          <div class="infosModalDinamic4">{{ myPropertyModal.address }}</div>
         </div>
         <div class="infosModal phoneModal" *ngIf="hasValidPhone">
           <div class="infosModalDefault">My phone number is</div>
-          <div class="infosModalDinamic">{{ myPropertyModal.phone }}</div>
+          <div class="infosModalDinamic5">{{ myPropertyModal.phone }}</div>
         </div>
         <div class="infosModal passwordModal" *ngIf="hasValidPassword">
           <div class="infosModalDefault">My password is</div>
-          <div class="infosModalDinamic">{{ myPropertyModal.password }}</div>
+          <div class="infosModalDinamic6">{{ myPropertyModal.password }}</div>
         </div>
       </div>
     </div>

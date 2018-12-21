@@ -11,6 +11,10 @@
   height: 100%;
 }
 
+/* .panel{
+  background:  #f2f2f2 !important;
+} */
+
 .row::after {
   content: "";
   clear: both;
