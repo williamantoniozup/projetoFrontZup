@@ -26,6 +26,26 @@ mat-header-row {
   border-radius: 50%;
 }
 
+mat-cell {
+  padding-left: 30px;
+  color: #86848997;
+}
+
+.email{
+  font-size: 14px;
+}
+
+.name{
+  padding-inline-start: inherit;
+  color: #323c52;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.phone{
+  font-size: 14px;
+}
+
 mat-row {
   border-bottom: 3px solid #86848942;
   height: 64px;
@@ -82,6 +102,21 @@ i.small{
 }
 .waves-effect{
   overflow: visible !important;
+}
+
+i.check:hover{
+  color: #a7d21e !important; 
+  font-weight: bolder;
+}
+
+i.select_all:hover{
+  color: #a7d21e !important; 
+  font-weight: bolder;
+}
+
+i.delete:hover{
+  color: red !important; 
+  font-weight: bolder;
 }
 
 .active {
