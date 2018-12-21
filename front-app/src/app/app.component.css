@@ -9,11 +9,18 @@
   padding: 0px;
   width: 100%;
   height: 100%;
+  z-index: 2;
 }
 
-/* .panel{
-  background:  #f2f2f2 !important;
-} */
+.header{
+  z-index: 3;
+}
+
+.panel{
+  background:  #f9f9f9 !important;
+  box-shadow: 0 0 5px #8684897b;
+  z-index: 1;
+}
 
 .row::after {
   content: "";
@@ -28,9 +35,11 @@
 .footer {
   background-color: #013750;
   text-align: center;
+  
 }
 .textFooter {
   color: aliceblue;
+  margin: 0;
 }
 
 /* For desktop: */

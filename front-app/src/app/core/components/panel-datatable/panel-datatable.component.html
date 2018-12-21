@@ -3,21 +3,21 @@
     <mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="imgProfile">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-        <mat-cell *matCellDef="let element" (click)="openServiceModal(element)"
+        <mat-cell class="imgProfile" *matCellDef="let element" (click)="openServiceModal(element)"
           ><img class="imgProfile" src="{{ element.imgProfile }}"
         /></mat-cell>
       </ng-container>
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-        <mat-cell *matCellDef="let element" (click)="openServiceModal(element)">{{ element.name }}</mat-cell>
+        <mat-cell class="name" *matCellDef="let element" (click)="openServiceModal(element)">{{ element.name }}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="email">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-        <mat-cell *matCellDef="let element" (click)="openServiceModal(element)">{{ element.email }}</mat-cell>
+        <mat-cell class="email" *matCellDef="let element" (click)="openServiceModal(element)">{{ element.email }}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="phone">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-        <mat-cell *matCellDef="let element" (click)="openServiceModal(element)">{{ element.phone }}</mat-cell>
+        <mat-cell class="phone" *matCellDef="let element" (click)="openServiceModal(element)">{{ element.phone }}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="city">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>

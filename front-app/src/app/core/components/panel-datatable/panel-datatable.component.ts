@@ -27,8 +27,8 @@ export class PanelDatatableComponent implements OnInit {
   public validationAttended: boolean = false;
   public validationTrash: boolean = false;
   public href: string = '';
-  displayedColumns: string[] = ['imgProfile','name','email','phone','city','customIcons'];
-  dataSource: MatTableDataSource<any>;
+  public displayedColumns: string[] = ['imgProfile','name','email','phone','city','customIcons'];
+  public dataSource: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 

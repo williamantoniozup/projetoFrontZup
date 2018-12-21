@@ -78,3 +78,8 @@
     font-size: 30px;
     /* margin-left: -20px; */
 }
+
+.btnClose{
+    color: #323c52;
+    font-weight: bolder;
+}
