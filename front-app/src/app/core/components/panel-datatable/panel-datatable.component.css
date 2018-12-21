@@ -1,4 +1,4 @@
-.containerDatatable {
+::ng-deep mat-table{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,14 +18,21 @@
 .tablePerfil {
   border-collapse: collapse;
 }
+mat-header-row {
+  min-height: 0;
+}
 
-tr {
+mat-row {
   border-bottom: 3px solid #86848942;
   height: 64px;
   max-width: 100%;
 }
 
-tr.profileRow > td.columnImgProfile > .imgProfile {
+::ng-deep .mat-paginator-container{
+  padding: 0 90px !important;
+}
+
+::ng-deep mat-row mat-cell.cdk-column-imgProfile.mat-column-imgProfile{
   margin: 0 1%;
   width: 45px;
   right: 45px;
