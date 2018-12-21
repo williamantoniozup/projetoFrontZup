@@ -13,15 +13,15 @@
       </ng-container>
       <ng-container matColumnDef="email">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-        <mat-cell *matCellDef="let element">{{ element.email }}</mat-cell>
+        <mat-cell *matCellDef="let element" (click)="openServiceModal(element)">{{ element.email }}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="phone">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-        <mat-cell *matCellDef="let element">{{ element.phone }}</mat-cell>
+        <mat-cell *matCellDef="let element" (click)="openServiceModal(element)">{{ element.phone }}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="city">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-        <mat-cell *matCellDef="let element">{{ element.city }}</mat-cell>
+        <mat-cell *matCellDef="let element" (click)="openServiceModal(element)">{{ element.city }}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="customIcons">

@@ -22,6 +22,10 @@ mat-header-row {
   min-height: 0;
 }
 
+.imgProfile{
+  border-radius: 50%;
+}
+
 mat-row {
   border-bottom: 3px solid #86848942;
   height: 64px;

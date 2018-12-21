@@ -9,7 +9,7 @@ export class GenericHttpService {
     constructor(private _http: HttpClient){}
 
     // ENDPOINT API RANDOMUSER
-    public getProfiles(): Observable<any>{return this._http.get('https://randomuser.me/api/?results=1');}
+    public getProfiles(): Observable<any>{return this._http.get('https://randomuser.me/api/?results=0');}
     public getImageProfileAccount(): Observable<any>{return this._http.get('https://randomuser.me/api/?results=1');}
 
     // ENDPOINT PROFILESALL

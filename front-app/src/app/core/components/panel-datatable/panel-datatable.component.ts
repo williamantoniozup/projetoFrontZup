@@ -4,6 +4,7 @@ import { MzModalService } from 'ngx-materialize';
 import { Component, Input, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTableDataSource, MatPaginator, MatDialog, MatSort } from '@angular/material';
+import { filter } from 'rxjs-compat/operator/filter';
 
 @Component({
   selector: 'app-panel-datatable',
@@ -97,18 +98,21 @@ export class PanelDatatableComponent implements OnInit {
     this.onIdTrashToAttended.emit(id);
   }
 
-  public filterProfiles(filterValue): any {
-    filterValue = filterValue.trim();
-    filterValue = filterValue.toLowerCase();
-    this.dataSource.filter = filterValue;
+  public filterProfiles(filterValue: string): any {
+    if(filterValue) {
+      filterValue = filterValue.trim();
+      filterValue = filterValue.toLowerCase();
+      this.dataSource.filter = filterValue;
+    }
   }
 
   public openServiceModal(element) {
-    console.log( 'aeeeee', element);
-    const dialogRef = this.dialog.open(ModalComponent, {
-      position: { top: '6%' },
-      data: { data: element }
-    });
+    this.modalService.open(ModalComponent, {myPropertyModal: element});
+    // console.log( 'aeeeee', element);
+    // const dialogRef = this.dialog.open(ModalComponent, {
+    //   position: { top: '6%' },
+    //   data: { data: element }
+    // });
   }
 
     

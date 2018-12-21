@@ -3,26 +3,44 @@
   <mz-modal-content> 
     <div class="containerContent">
       <div class="containerImgProfile">
-        <img class="imgProfileModal" src="https://randomuser.me/api/portraits/thumb/women/80.jpg">
+        <img class="imgProfileModal" src="{{ myPropertyModal.imgProfileModal }}">
       </div>
       <div class="containerInfos">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="infosModal nameModal" *ngIf="hasValidName">
+          <div class="infosModalDefault">Hi, My name is</div>
+          <div class="infosModalDinamic">{{ myPropertyModal.name }}</div>
+        </div>
+        <div class="infosModal emailModal" *ngIf="hasValidEmail">
+          <div class="infosModalDefault">My email address is</div>
+          <div class="infosModalDinamic2">{{ myPropertyModal.email }}</div>
+        </div>
+        <div class="infosModal birthdayModal" *ngIf="hasValidBirthday">
+          <div class="infosModalDefault">My birthday is</div>
+          <div class="infosModalDinamic">{{ myPropertyModal.birthday }}</div>
+        </div>
+        <div class="infosModal addressModal" *ngIf="hasValidAddress">
+          <div class="infosModalDefault">My address is</div>
+          <div class="infosModalDinamic">{{ myPropertyModal.address }}</div>
+        </div>
+        <div class="infosModal phoneModal" *ngIf="hasValidPhone">
+          <div class="infosModalDefault">My phone number is</div>
+          <div class="infosModalDinamic">{{ myPropertyModal.phone }}</div>
+        </div>
+        <div class="infosModal passwordModal" *ngIf="hasValidPassword">
+          <div class="infosModalDefault">My password is</div>
+          <div class="infosModalDinamic">{{ myPropertyModal.password }}</div>
+        </div>
       </div>
     </div>
   </mz-modal-content>
   <mz-modal-footer class="modalFooter">
     <div class="containerFooter">
-      <i class="material-icons"> perm_identity </i>
-      <i class="material-icons"> mail </i>
-      <i class="material-icons"> calendar_today </i>
-      <i class="material-icons"> location_on </i>
-      <i class="material-icons"> phone </i>
-      <i class="material-icons"> vpn_key </i>
+      <i class="material-icons" (mouseenter)=infoName()> perm_identity </i>
+      <i class="material-icons" (mouseenter)=infoEmail()> mail </i>
+      <i class="material-icons" (mouseenter)=infoBirthday()> calendar_today </i>
+      <i class="material-icons" (mouseenter)=infoAddress()> location_on </i>
+      <i class="material-icons" (mouseenter)=infoPhone()> phone </i>
+      <i class="material-icons" (mouseenter)=infoPassword()> vpn_key </i>
     </div>
   </mz-modal-footer>
 </mz-modal>
