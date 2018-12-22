@@ -23,10 +23,9 @@
   outline: none;
 }
 
-/* .select_all{
-  width: 30%;
-  height: auto;
-} */
+.select_all__menu{
+  font-size: 10px;
+}
 
 .containerAttended {
   display: flex;
@@ -39,7 +38,7 @@
   outline: none;
 }
 
-.done_all {
+.done_all_menu {
   padding: 0px 15px 0px 35px;
 }
 
@@ -54,7 +53,7 @@
   outline: none;
 }
 
-.delete_sweep {
+.delete_sweep_menu {
   padding: 0px 26px 0px 8px;
 }
 
@@ -74,6 +73,11 @@
   background: transparent;
 }
 
+i.small {
+  font-size: 1.65rem;
+}
+
 .active {
   color: #a7d21e;
+  font-weight: bold;
 }

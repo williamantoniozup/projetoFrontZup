@@ -1,31 +1,31 @@
-.containerGeral{
+.containerGeral {
   margin: 0px;
   width: 100%;
   min-height: 100%;
 }
 
-.containerMain{
+.containerMain {
   margin: 0px;
   padding: 0px;
   width: 100%;
   height: 100%;
 }
 
-.header{
+/* .header{
   display: -webkit-flex;
   z-index: 3;
-}
+} */
 
-.headerApp{
+.headerApp {
   width: 100%;
 }
 
-.menu{
+.menu {
   z-index: 2;
 }
 
-.panel{
-  background:  #f9f9f9 !important;
+.panel {
+  background: #f9f9f9 !important;
   box-shadow: 0 0 5px #8684897b;
   z-index: 1;
 }
@@ -43,7 +43,6 @@
 .footer {
   background-color: #013750;
   text-align: center;
-  
 }
 .textFooter {
   color: aliceblue;
@@ -86,6 +85,11 @@
 }
 .col-12 {
   width: 100%;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 @media only screen and (max-width: 768px) {
