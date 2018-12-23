@@ -11,10 +11,10 @@
   height: 100%;
 }
 
-/* .header{
+.header{
   display: -webkit-flex;
   z-index: 3;
-} */
+}
 
 .headerApp {
   width: 100%;
