@@ -11,17 +11,17 @@
   height: 100%;
 }
 
-/* .header{
+.header{
   display: -webkit-flex;
   z-index: 3;
-} */
+}
 
 .headerApp {
   width: 100%;
 }
 
 .menu {
-  z-index: 2;
+  height:100%;
 }
 
 .panel {
