@@ -1,17 +1,17 @@
 .containerGeral {
-  margin: 0px;
+  margin: 0;
   width: 100%;
   min-height: 100%;
 }
 
 .containerMain {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
 }
 
-.header{
+.header {
   display: -webkit-flex;
   z-index: 3;
 }
@@ -21,13 +21,14 @@
 }
 
 .menu {
-  height:100%;
+  height: 100%;
 }
 
 .panel {
   background: #f9f9f9 !important;
   box-shadow: 0 0 5px #8684897b;
   z-index: 1;
+  height:100vh;
 }
 
 .row::after {
@@ -41,12 +42,21 @@
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   background-color: #013750;
   text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
 }
 .textFooter {
   color: aliceblue;
-  margin: 0;
+  margin-top: 15px;
+  height: 50%;
 }
 
 /* For desktop: */

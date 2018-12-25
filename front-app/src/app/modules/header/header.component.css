@@ -7,6 +7,11 @@
   height: 64px;
 }
 
+.insideHeader{
+  margin: 0;
+  padding: 0;
+}
+
 img.responsive {
   width: 50%;
   height: auto;
