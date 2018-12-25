@@ -1,25 +1,36 @@
-::ng-deep mat-table{
+.containerDatatable{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(255, 255, 255);
   flex-direction: column;
+  justify-content: center;
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  margin: 50px;
-  max-width: 100%;
+  align-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+::ng-deep mat-table {
+  background-color: rgb(255, 255, 255);
+  max-width: 80%;
+  max-height: 80%;
   height: auto;
   box-shadow: 0 0 5px #8684897b;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  flex: 0.5;
+  margin: 15px;
 }
 
 .tablePerfil {
   border-collapse: collapse;
 }
+
+/* .paginatorDiv{
+  position: static;
+} */
+
 mat-header-row {
   min-height: 0;
+  color: #86848900;
 }
 
 .imgProfile{
