@@ -1,9 +1,7 @@
 
 .containerFooter{
     display: flex;
-    justify-content: space-between;
-    width: 50%;
-    margin-left: 200px;
+    justify-content: space-evenly;
     color:#86848997;
 }
 ::ng-deep .modal{
