@@ -1,10 +1,8 @@
-import { element } from 'protractor';
 import { ModalComponent } from './../modal/modal.component';
 import { MzModalService } from 'ngx-materialize';
 import { Component, Input, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTableDataSource, MatPaginator, MatDialog, MatSort } from '@angular/material';
-import { filter } from 'rxjs-compat/operator/filter';
 
 @Component({
   selector: 'app-panel-datatable',
@@ -106,7 +104,7 @@ export class PanelDatatableComponent implements OnInit {
     }
   }
 
-  public openServiceModal(element) {
+  public openServiceModal(element: any) {
     this.modalService.open(ModalComponent, {myPropertyModal: element});
     // console.log( 'aeeeee', element);
     // const dialogRef = this.dialog.open(ModalComponent, {

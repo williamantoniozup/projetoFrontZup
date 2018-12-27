@@ -71,12 +71,16 @@ mat-row {
 }
 
 ::ng-deep mat-row mat-cell.cdk-column-imgProfile.mat-column-imgProfile{
-  margin: 0 1%;
+  margin: 0;
   width: 45px;
   right: 45px;
   border-radius: 50%;
   max-width: 100%;
   height: auto;
+}
+
+::ng-deep .name.mat-cell.cdk-column-name.mat-column-name{
+  margin-left: -50px;
 }
 
 td.columnImgProfile {
@@ -131,8 +135,14 @@ i.select_all:hover{
 i.delete:hover{
   color: red !important; 
   font-weight: bolder;
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 .active {
   color: #a7d21e;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
 }
