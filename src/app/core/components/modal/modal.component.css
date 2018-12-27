@@ -1,0 +1,83 @@
+
+.containerFooter{
+    display: flex;
+    justify-content: space-evenly;
+    color:#86848997;
+}
+::ng-deep .modal{
+    background: -webkit-linear-gradient(top,  #f2f2f2,  #f2f2f2 50%,white 50%, white) !important;
+} 
+::ng-deep .modal.modal-fixed-footer .modal-footer {
+    border-top: none !important;
+    background-color: white;
+}
+
+.imgProfileModal{
+    display: flex;
+    justify-content: center;
+    margin-left: 43%;
+    margin-top: 20%;
+    border-radius: 50%;
+}
+
+.containerFooter :hover{
+    color: #a7d21e;
+}
+
+.material-icons{
+    font-size: 40px;
+}
+
+.infosModal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 43%;
+}
+
+.infosModalDefault{
+    color:#86848997;
+    font-size: 20px;
+}
+
+.infosModalDinamic{
+    color: #013750;
+    font-size: 50px;
+}
+
+
+.infosModalDinamic2{
+    color: #013750;
+    font-size: 25px;
+    margin-left: -90px;
+    margin-right: 50%;
+}
+
+.infosModalDinamic3{
+    color: #013750;
+    font-size: 30px;
+    margin-left: -100px;
+}
+
+.infosModalDinamic4{
+    color: #013750;
+    font-size: 30px;
+    margin-left: -50px;
+}
+
+.infosModalDinamic5{
+    color: #013750;
+    font-size: 30px;
+    margin-left: -5px;
+}
+
+.infosModalDinamic6{
+    color: #013750;
+    font-size: 30px;
+    /* margin-left: -20px; */
+}
+
+.btnClose{
+    color: #323c52;
+    font-weight: bolder;
+}

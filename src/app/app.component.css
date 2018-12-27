@@ -1,0 +1,111 @@
+.containerGeral {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.containerMain {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  display: -webkit-flex;
+  z-index: 3;
+}
+
+.headerApp {
+  width: 100%;
+}
+
+.menu {
+  height: 100%;
+}
+
+.panel {
+  background: #f9f9f9 !important;
+  box-shadow: 0 0 5px #8684897b;
+  z-index: 1;
+  height:100vh;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: flex;
+}
+
+[class*="col-"] {
+  float: left;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #013750;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3%;
+  /* height: 50px; */
+}
+.textFooter {
+  color: aliceblue;
+  height: 50%;
+  margin-top: 0;
+}
+
+/* For desktop: */
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 88.65%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}

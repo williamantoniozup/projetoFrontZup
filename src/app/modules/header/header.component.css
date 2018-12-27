@@ -1,0 +1,80 @@
+
+#headerNav {
+  background-color: #013750;
+}
+
+.classLogo {
+  height: 64px;
+}
+
+.insideHeader{
+  margin: 0;
+  padding: 0;
+}
+
+img.responsive {
+  width: 50%;
+  height: auto;
+  min-width: 65px;
+  min-height: 30px;
+  max-width: 95px;
+  margin-top: 12px;
+  margin-left: -15px;
+  padding-left: 20px;
+}
+
+#containerInputTextHeader {
+  display: flex;
+  height: 40px;
+}
+
+#autocomplete-input {
+  border-bottom: none;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  border-bottom: none;
+}
+
+#containerInput {
+  background-color: white;
+  border-radius: 35px;
+  height: 40px;
+  margin-top: 12px;
+}
+
+#iconPerfil {
+  font-size: 40px;
+}
+
+.containerIconLupa {
+  display: flex;
+  height: 40px;
+}
+
+.lupaIcon {
+  justify-content: center;
+  line-height: 1.8;
+  font-weight: bold;
+  padding: 0;
+  height: 40px;
+  color: #a7d21e;
+  max-width: 100%;
+}
+
+.containerPerfil {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.imgAccount{
+  width: 45px;
+  right: 45px;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 8px;
+  max-width: 100%;
+  min-width: 0px;
+  min-height: 10px;
+}
