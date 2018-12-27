@@ -13,7 +13,7 @@
   margin: 0;
   padding: 0;
   height:100vh;
-
+  width: 100%
 }
 
 .containerAll {
@@ -25,10 +25,12 @@
   color: #868489;
   cursor: pointer;
   outline: none;
+  width: 80%;
 }
 
 .select_all__menu{
   font-size: 10px;
+  padding: 0px 5px 0px 15px;
 }
 
 .containerAttended {
@@ -40,10 +42,11 @@
   color: #868489;
   cursor: pointer;
   outline: none;
+  width: 80%;
 }
 
 .done_all_menu {
-  padding: 0px 15px 0px 35px;
+  padding: 0px 0px 0px 38px;
 }
 
 .containerTrashcan {
@@ -55,10 +58,11 @@
   color: #868489;
   cursor: pointer;
   outline: none;
+  width: 80%;
 }
 
 .delete_sweep_menu {
-  padding: 0px 26px 0px 8px;
+  padding: 0px 15px 0px 8px;
 }
 
 .trashText {
@@ -67,6 +71,7 @@
 
 .containerSpace {
   height: 20px;
+  width: 80%;
 }
 
 .containerSpaceEnd {
