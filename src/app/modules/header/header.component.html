@@ -1,0 +1,28 @@
+<div class="containerHeader">
+  <nav id="headerNav">
+    <div class="nav-wrapper">
+      <div class="row insideHeader">
+        <div class="classLogo col s2">
+          <img class="responsive" src="/assets/image/logoZupHeader.png"/>
+        </div>
+        <div id="containerInput" class="col s8">
+          <div class="col s0 containerIconLupa">
+            <i class="material-icons prefix lupaIcon">search</i>
+          </div>
+          <div id="containerInputTextHeader" class="col s6">
+            <input
+              type="text"
+              placeholder="Buscar"
+              id="autocomplete-input"
+              class="autocomplete black-text"
+              (keyup)="applyFilter($event.target.value)"
+            />
+          </div>
+        </div>
+        <div class="containerPerfil col s2">
+            <img class="imgAccount" src="{{ urlImg }}"/>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

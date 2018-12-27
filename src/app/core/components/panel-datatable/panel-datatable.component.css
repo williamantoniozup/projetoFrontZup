@@ -1,0 +1,148 @@
+.containerDatatable{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  /* width: 1333px; */
+  /* width: 100vh; */
+}
+
+::ng-deep mat-table {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  max-width: 90%;
+  max-height: 80%;
+  height: auto;
+  box-shadow: 0 0 5px #8684897b;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin: 15px;
+}
+
+.tablePerfil {
+  border-collapse: collapse;
+}
+
+/* .paginatorDiv{
+  position: static;
+} */
+
+mat-header-row {
+  min-height: 0;
+  color: #86848900;
+}
+
+.imgProfile{
+  border-radius: 50%;
+}
+
+mat-cell {
+  padding-left: 30px;
+  color: #86848997;
+}
+
+.email{
+  font-size: 14px;
+}
+
+.name{
+  padding-inline-start: inherit;
+  color: #323c52;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.phone{
+  font-size: 14px;
+}
+
+mat-row {
+  border-bottom: 3px solid #86848942;
+  height: 64px;
+  max-width: 100%;
+}
+
+::ng-deep .mat-paginator-container{
+  padding: 0 90px !important;
+}
+
+::ng-deep mat-row mat-cell.cdk-column-imgProfile.mat-column-imgProfile{
+  margin: 0;
+  width: 45px;
+  right: 45px;
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
+}
+
+::ng-deep .name.mat-cell.cdk-column-name.mat-column-name{
+  margin-left: -50px;
+}
+
+td.columnImgProfile {
+  padding-left: 75px;
+}
+
+td.columnIconDelete td.columnIconSelect td.columnIconCheck {
+  padding: 10px 0px;
+}
+
+i.delete{
+  color: #86848997;
+  cursor: pointer;
+}
+
+i.select_all{
+  cursor: pointer;
+  color: #86848997;
+}
+
+i.check{
+  cursor: pointer;
+  color: #86848997;
+}
+
+span.nameProfile{
+  color: #323c52;
+  font-size: 20px;
+}
+
+span.emailProfile, span.phoneProfile, span.cityProfile{
+  color:#868489c9;
+}
+
+i.small{
+  font-size: 1.4rem !important;
+}
+.waves-effect{
+  overflow: visible !important;
+}
+
+i.check:hover{
+  color: #a7d21e !important; 
+  font-weight: bolder;
+}
+
+i.select_all:hover{
+  color: #a7d21e !important; 
+  font-weight: bolder;
+}
+
+i.delete:hover{
+  color: red !important; 
+  font-weight: bolder;
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.active {
+  color: #a7d21e;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}

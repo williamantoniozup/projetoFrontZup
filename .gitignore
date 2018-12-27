@@ -1,0 +1,13 @@
+typings/
+node_modules/
+dist/
+temp/
+coverage/
+*.log.*
+*.log
+TESTS-*.xml
+mfe-*/
+.idea/
+dist.tgz
+documentation/
+.vscode/
