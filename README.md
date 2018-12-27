@@ -16,5 +16,8 @@ Executar API JSON-SERVER:
 json-server -p 4000 banco-de-dados.json
 
 
+Acessar aplicação:
+localhost:4200
+
 ** Caso precise atualizar JSON-SERVER API:
 npm i -g json-server
