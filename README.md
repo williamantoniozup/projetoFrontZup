@@ -1,5 +1,16 @@
 # FrontApp
 
+## Inicando projeto
+
+Clone o repositório no seu diretório: `npm run install`
+Instalando JSON-SERVER API: `npm install -g json-server`
+
+Iniciando aplicação do front: `npm run start`
+Iniciando API Json-Server: `json-server -p 4000 banco-de-dados.json`
+
+Abrir aplicação local do front: `http://localhost:4200`
+Abrir json-server: `http://localhost:4000`
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
 
 ## Development server
