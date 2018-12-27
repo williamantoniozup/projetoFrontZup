@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --prod &&  json-server -p 4000 banco-de-dados.json"
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
