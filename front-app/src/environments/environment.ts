@@ -8,7 +8,7 @@ export const environment = {
   URL_ACCOUNT: 'https://randomuser.me/api/?results=1',
 
   //URL json-server API
-  URL_JSON_API: 'http://localhost:3000',
+  URL_JSON_API: 'http://localhost:4000',
 
   // URL ALL
   ALL: '/profiles',
