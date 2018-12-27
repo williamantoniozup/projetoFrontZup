@@ -83,8 +83,8 @@ export class GenericSandboxService{
         )
     }
 
-    public doPostListProfilesAttended(payload: object): void {
-        this._httpRequest.saveProfilesAttended(payload).subscribe((data:any)=>{});
+    public doPostListProfilesAttended(payload: object) {
+        return this._httpRequest.saveProfilesAttended(payload);
     }
 
     public doUpdateListProfilesAttended(payload: object): void {
