@@ -7,7 +7,7 @@ import { MzBaseModal,  } from 'ngx-materialize';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent extends MzBaseModal{
-  @Input() public myPropertyModal: object;
+  @Input() public myPropertyModal: any;
   public hasValidName: boolean = true;
   public hasValidEmail: boolean = false;
   public hasValidBirthday: boolean = false;
