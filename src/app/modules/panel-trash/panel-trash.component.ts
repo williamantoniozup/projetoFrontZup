@@ -15,7 +15,7 @@ export class PanelTrashComponent implements OnInit {
   constructor(private _sandbox: GenericSandboxService){} 
   
   ngOnInit(): void {
-    this.loadListAll();
+    this.loadListAllTrash();
     this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }
 
@@ -31,20 +31,17 @@ export class PanelTrashComponent implements OnInit {
     this._sandbox.doDeleteListProfilesTrash(payload).subscribe(
       (data:any) => {
         this._sandbox.setErrorGeneric(false);
-        this.loadListAll();
+        this.loadListAllTrash();
       },
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error);
       }
     );
+
     this._sandbox.doPostListProfilesAllJustObjetc(payload).subscribe(
-      (data:any) => {
-        this.loadListAll();
-      },
+      (data:any) => {},
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error);
       }
     );
   }
@@ -53,20 +50,17 @@ export class PanelTrashComponent implements OnInit {
     this._sandbox.doDeleteListProfilesTrash(payload).subscribe(
       (data:any) => { 
         this._sandbox.setErrorGeneric(false);
-        this.loadListAll();
+        this.loadListAllTrash();
       },
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error);
       }
     );
+    
     this._sandbox.doPostListProfilesAttended(payload).subscribe(
-      (data:any) => {
-        this.loadListAll();
-      },
+      (data:any) => {},
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error);
       }
     );
   }
@@ -87,7 +81,7 @@ export class PanelTrashComponent implements OnInit {
     });
   }
 
-  public loadListAll(): void{
+  public loadListAllTrash(): void{
     this._sandbox.doGetListProfilesTrash();
     this._sandbox.profilesTrash.subscribe(
       res => {

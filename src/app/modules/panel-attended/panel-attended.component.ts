@@ -16,7 +16,7 @@ export class PanelAttendedComponent implements OnInit{
 
 
   ngOnInit(): void{
-    this.loadListAll();
+    this.loadListAllAttended();
     this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }
 
@@ -32,18 +32,17 @@ export class PanelAttendedComponent implements OnInit{
     this._sandbox.doDeleteListProfilesAttended(payload).subscribe(
       (data:any) => {
         this._sandbox.setErrorGeneric(false);
-        this.loadListAll();
+        this.loadListAllAttended();
       },
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error)
       }
     );
+
     this._sandbox.doPostListProfilesAllJustObjetc(payload).subscribe(
       (data:any) => {},
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error)
       }
     );
   }
@@ -52,20 +51,17 @@ export class PanelAttendedComponent implements OnInit{
     this._sandbox.doDeleteListProfilesAttended(payload).subscribe(
       (data:any) => { 
         this._sandbox.setErrorGeneric(false);
-        this.loadListAll();
+        this.loadListAllAttended();
       },
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error);
       }
     );
+    
     this._sandbox.doPostListProfilesTrash(payload).subscribe(
-      (data:any) => { 
-        this.loadListAll();
-      },
+      (data:any) => {},
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error);
       }
     );
   }
@@ -86,7 +82,7 @@ export class PanelAttendedComponent implements OnInit{
     });
   }
 
-  public loadListAll(): void{
+  public loadListAllAttended(): void{
     this._sandbox.doGetListProfilesAttended();
     this._sandbox.profilesAttended.subscribe(
       res => {

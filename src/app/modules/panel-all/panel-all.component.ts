@@ -38,16 +38,13 @@ export class PanelAllComponent implements OnInit {
       }, 
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error)
       }
     );
+
     this._sandbox.doPostListProfilesAttended(payload).subscribe(
-      (data:any)=>{
-        // this._sandbox.setErrorGeneric(false);   
-      }, 
+      (data:any)=>{}, 
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro POST -> ', error)
       } 
     );
   }
@@ -60,14 +57,13 @@ export class PanelAllComponent implements OnInit {
       },
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error)
       }
     );
+    
     this._sandbox.doPostListProfilesTrash(payload).subscribe(
       (data:any)=>{},
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        console.log('Erro DELETE-> ', error)
       }
     );   
   }
