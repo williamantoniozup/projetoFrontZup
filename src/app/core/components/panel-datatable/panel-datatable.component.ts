@@ -21,6 +21,7 @@ export class PanelDatatableComponent implements OnInit {
   @Output() public onIdTrashToAll = new EventEmitter<number>();
   @Output() public onIdTrashToAttended = new EventEmitter<number>();
 
+  public subscription: any;
   public hasErrorMessage: boolean = false;
   public profiles: any = [];
   public validationAll: boolean = false;
@@ -42,11 +43,24 @@ export class PanelDatatableComponent implements OnInit {
 
   ngOnInit(): void {
     this.setRoute();
+    this.subscription = this._sandbox.errorGeneric.subscribe(
+      (response) => {
+        if(response){
+          this.showToastFail();
+        } else {
+          this.showToastSucess();
+        }
+      }
+    );
   }
 
   ngOnChanges(changes: any): void {
     this.feedsDatatable();
     this.filterProfiles(this.textSearch);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   public setTableAll(): void {
@@ -127,22 +141,6 @@ export class PanelDatatableComponent implements OnInit {
     //   position: { top: '6%' },
     //   data: { data: element }
     // });
-  }
-
-  public verifyError(): void {
-    this.showToastSucess();
-    // this._sandbox.errorGeneric.subscribe(
-    //   (response) => {
-    //     console.log('quiiiiiiii', response)
-    //     if(response){
-    //       console.log('aquiii houve erro');
-    //       this.showToastFail();
-    //     } else {
-    //       console.log('aquii houve sucesso');
-    //       this.showToastSucess();
-    //     }
-    //   }
-    // );
   }
 
   public showToastSucess() {

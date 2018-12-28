@@ -28,13 +28,47 @@ export class PanelTrashComponent implements OnInit {
   }
 
   public moveProfileTrashToProfileAll(payload: object): void {
-    this._sandbox.doDeleteListProfilesTrash(payload).subscribe((data:any)=>{this.loadListAll();});
-    this._sandbox.doPostListProfilesAllJustObjetc(payload);
+    this._sandbox.doDeleteListProfilesTrash(payload).subscribe(
+      (data:any) => {
+        this._sandbox.setErrorGeneric(false);
+        this.loadListAll();
+      },
+      (error) => {
+        this._sandbox.setErrorGeneric(true);
+        console.log('Erro DELETE-> ', error);
+      }
+    );
+    this._sandbox.doPostListProfilesAllJustObjetc(payload).subscribe(
+      (data:any) => {
+        this.loadListAll();
+      },
+      (error) => {
+        this._sandbox.setErrorGeneric(true);
+        console.log('Erro DELETE-> ', error);
+      }
+    );
   }
 
   public moveProfileTrashToProfileAttended(payload: object): void {
-    this._sandbox.doDeleteListProfilesTrash(payload).subscribe((data:any)=>{this.loadListAll();});
-    this._sandbox.doPostListProfilesAttended(payload);
+    this._sandbox.doDeleteListProfilesTrash(payload).subscribe(
+      (data:any) => { 
+        this._sandbox.setErrorGeneric(false);
+        this.loadListAll();
+      },
+      (error) => {
+        this._sandbox.setErrorGeneric(true);
+        console.log('Erro DELETE-> ', error);
+      }
+    );
+    this._sandbox.doPostListProfilesAttended(payload).subscribe(
+      (data:any) => {
+        this.loadListAll();
+      },
+      (error) => {
+        this._sandbox.setErrorGeneric(true);
+        console.log('Erro DELETE-> ', error);
+      }
+    );
   }
 
   public searchProfileAll(id: number): void {
