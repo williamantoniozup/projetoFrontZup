@@ -20,6 +20,7 @@ export class PanelDatatableComponent implements OnInit {
   @Output() public onIdTrashToAll = new EventEmitter<number>();
   @Output() public onIdTrashToAttended = new EventEmitter<number>();
 
+  public hasErrorMessage: boolean = false;
   public profiles: any = [];
   public validationAll: boolean = false;
   public validationAttended: boolean = false;

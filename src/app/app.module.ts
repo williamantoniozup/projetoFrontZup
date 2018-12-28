@@ -1,3 +1,4 @@
+import { ErrorGenericComponent } from './core/components/error-generic/error-generic.component';
 import { GenericSandboxService } from './services/generic-sandbox.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalComponent } from './core/components/modal/modal.component';
@@ -16,7 +17,7 @@ import { ROUTES } from './app.routes';
 import { PanelAllComponent } from './modules/panel-all/panel-all.component';
 import { PanelAttendedComponent } from './modules/panel-attended/panel-attended.component';
 import { PanelTrashComponent } from './modules/panel-trash/panel-trash.component';
-import { MzModalModule, MzPaginationModule, MzButtonModule } from 'ngx-materialize'
+import { MzModalModule, MzPaginationModule, MzButtonModule, MzCardModule } from 'ngx-materialize'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DataTablesModule } from 'angular-datatables';
 import { MatTableModule, MatPaginatorModule, MatDialogModule } from "@angular/material";
@@ -32,6 +33,7 @@ import { MatTableModule, MatPaginatorModule, MatDialogModule } from "@angular/ma
     PanelAllComponent,
     PanelAttendedComponent,
     PanelTrashComponent,
+    ErrorGenericComponent
 
   ],
   imports: [
@@ -47,7 +49,8 @@ import { MatTableModule, MatPaginatorModule, MatDialogModule } from "@angular/ma
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
-    MzButtonModule 
+    MzButtonModule,
+    MzCardModule 
   ],
   providers: [
     GenericHttpService,
