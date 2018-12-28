@@ -12,29 +12,31 @@ export class GenericHttpService{
         this._environment = environment;
     }
 
-    getUrlApiRandom(): string {
+    public getUrlApiRandom(): string {
         return this._environment.URL_API;
     }
 
-    getUrlApiRandomImgAccount(): string {
+    public getUrlApiRandomImgAccount(): string {
         return this._environment.URL_ACCOUNT;
     }
 
-    getUrlApiJsonServer(): string {
+    public getUrlApiJsonServer(): string {
         return this._environment.URL_JSON_API;
     }
 
-    getEndPointProfileAll(): string {
+    public getEndPointProfileAll(): string {
         return this._environment.ALL;
     }
 
-    getEndPointProfileAttended(): string {
+    public getEndPointProfileAttended(): string {
         return this._environment.ATTENDED;
     }
 
-    getEndPointProfileTrashCan(): string {
+    public getEndPointProfileTrashCan(): string {
         return this._environment.TRASHCAN;
     }
+
+    
 
 
     // ENDPOINT API RANDOMUSER

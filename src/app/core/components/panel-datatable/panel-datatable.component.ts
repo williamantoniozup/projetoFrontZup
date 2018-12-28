@@ -1,8 +1,9 @@
 import { ModalComponent } from './../modal/modal.component';
-import { MzModalService } from 'ngx-materialize';
+import { MzModalService, MzToastService } from 'ngx-materialize';
 import { Component, Input, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTableDataSource, MatPaginator, MatDialog, MatSort } from '@angular/material';
+import { GenericSandboxService } from 'src/app/services/generic-sandbox.service';
 
 @Component({
   selector: 'app-panel-datatable',
@@ -31,7 +32,13 @@ export class PanelDatatableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private router: Router, private modalService: MzModalService, public dialog: MatDialog){}
+  constructor(
+    private _sandbox: GenericSandboxService,
+    private toastService: MzToastService,
+    private router: Router, 
+    private modalService: MzModalService, 
+    public dialog: MatDialog
+  ){}
 
   ngOnInit(): void {
     this.href = this.router.url;
@@ -114,5 +121,26 @@ export class PanelDatatableComponent implements OnInit {
     // });
   }
 
+  public verifyError(): void {
+    this.showToastSucess();
+    // this._sandbox.errorGeneric.subscribe(
+    //   (response) => {
+    //     console.log('quiiiiiiii', response)
+    //     if(response){
+    //       this.showToastSucess();
+    //     } else {
+    //       this.showToastFail();
+    //     }
+    //   }
+    // );
+  }
+
+  public showToastSucess() {
+    this.toastService.show('Sucess!', 1000, 'green');
+  }
+
+  public showToastFail() {
+    this.toastService.show('Failed!', 1000, 'red');
+  }
     
 }

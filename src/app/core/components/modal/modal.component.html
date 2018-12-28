@@ -1,4 +1,4 @@
-<mz-modal #bottomSheetModal [fixedFooter]="true" [options]="modalOptions">
+<mz-modal #bottomSheetModal [fixedFooter]="true" [options]="modalOptions" *ngIf="!hasErrorMessage">
   <mz-modal-header>
     <button class="btnClose" mz-button [flat]="true" mz-modal-close>Close</button>
   </mz-modal-header>
@@ -46,3 +46,8 @@
     </div>
   </mz-modal-footer>
 </mz-modal>
+
+<div *ngIf="hasErrorMessage">
+  <app-error-generic></app-error-generic>
+</div>
+

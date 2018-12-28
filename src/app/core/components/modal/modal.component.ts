@@ -7,6 +7,7 @@ import { MzBaseModal,  } from 'ngx-materialize';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent extends MzBaseModal{
+
   @Input() public myPropertyModal: any;
   public hasValidName: boolean = true;
   public hasValidEmail: boolean = false;
@@ -14,6 +15,7 @@ export class ModalComponent extends MzBaseModal{
   public hasValidAddress: boolean = false;
   public hasValidPhone: boolean = false;
   public hasValidPassword: boolean = false;
+  public hasErrorMessage: boolean = false;
 
   public modalOptions: Materialize.ModalOptions = {
     dismissible: false, // Modal can be dismissed by clicking outside of the modal
