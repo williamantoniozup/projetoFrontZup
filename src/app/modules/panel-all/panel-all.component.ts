@@ -19,7 +19,6 @@ export class PanelAllComponent implements OnInit {
   ngOnInit(): void {
     this.loadListAll();
     this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
-    this._sandbox.setErrorGeneric(false);
   }  
 
   public onGetIdAllToAttended(id: number): void {
@@ -33,14 +32,19 @@ export class PanelAllComponent implements OnInit {
 
   public moveProfileAllToProfileAttended(payload: object): void{
     this._sandbox.doDeleteListProfilesAll(payload).subscribe(
-      (data:any)=>{ this.loadListAll()}, 
+      (data:any)=>{ 
+        this._sandbox.setErrorGeneric(false);
+        this.loadListAll();
+      }, 
       (error) => {
         this._sandbox.setErrorGeneric(true);
         console.log('Erro DELETE-> ', error)
       }
     );
     this._sandbox.doPostListProfilesAttended(payload).subscribe(
-      (data:any)=>{}, 
+      (data:any)=>{
+        // this._sandbox.setErrorGeneric(false);   
+      }, 
       (error) => {
         this._sandbox.setErrorGeneric(true);
         console.log('Erro POST -> ', error)
@@ -49,8 +53,23 @@ export class PanelAllComponent implements OnInit {
   }
 
   public moveProfileAllToProfileTrash(payload: object): void {
-    this._sandbox.doDeleteListProfilesAll(payload).subscribe((data:any)=>{ this.loadListAll()});
-    this._sandbox.doPostListProfilesTrash(payload);
+    this._sandbox.doDeleteListProfilesAll(payload).subscribe(
+      (data:any)=>{ 
+        this._sandbox.setErrorGeneric(false);
+        this.loadListAll();
+      },
+      (error) => {
+        this._sandbox.setErrorGeneric(true);
+        console.log('Erro DELETE-> ', error)
+      }
+    );
+    this._sandbox.doPostListProfilesTrash(payload).subscribe(
+      (data:any)=>{},
+      (error) => {
+        this._sandbox.setErrorGeneric(true);
+        console.log('Erro DELETE-> ', error)
+      }
+    );   
   }
 
   public searchProfileAttended(id: number): void {

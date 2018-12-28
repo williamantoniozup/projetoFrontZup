@@ -67,8 +67,8 @@ export class GenericSandboxService{
         });   
     }
 
-    public doPostListProfilesAllJustObjetc(payload: object): void {
-        this._httpRequest.saveProfilesAll(payload).subscribe((data:any)=>{});
+    public doPostListProfilesAllJustObjetc(payload: object) {
+        return this._httpRequest.saveProfilesAll(payload);
     }
 
     public doUpdateListProfilesAll(payload: object): void {
@@ -109,8 +109,8 @@ export class GenericSandboxService{
         )
     }
 
-    public doPostListProfilesTrash(payload: object): void {
-        this._httpRequest.saveProfilesTrash(payload).subscribe((data:any)=>{});      
+    public doPostListProfilesTrash(payload: object) {
+        return this._httpRequest.saveProfilesTrash(payload);   
     }
 
     public doUpdateListProfilesTrash(payload: object): void {
