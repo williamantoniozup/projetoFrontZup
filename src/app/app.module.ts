@@ -17,7 +17,7 @@ import { ROUTES } from './app.routes';
 import { PanelAllComponent } from './modules/panel-all/panel-all.component';
 import { PanelAttendedComponent } from './modules/panel-attended/panel-attended.component';
 import { PanelTrashComponent } from './modules/panel-trash/panel-trash.component';
-import { MzModalModule, MzPaginationModule, MzButtonModule, MzCardModule } from 'ngx-materialize'
+import { MzModalModule, MzPaginationModule, MzButtonModule, MzCardModule, MzToastModule } from 'ngx-materialize'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DataTablesModule } from 'angular-datatables';
 import { MatTableModule, MatPaginatorModule, MatDialogModule } from "@angular/material";
@@ -50,7 +50,8 @@ import { MatTableModule, MatPaginatorModule, MatDialogModule } from "@angular/ma
     MatPaginatorModule,
     MatDialogModule,
     MzButtonModule,
-    MzCardModule 
+    MzCardModule,
+    MzToastModule  
   ],
   providers: [
     GenericHttpService,

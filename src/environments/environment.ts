@@ -19,4 +19,7 @@ export const environment = {
   // URL TRASHCAN
   TRASHCAN: '/trashcan'
 
+  //  MOCK erro 500
+  // http://www.mocky.io/v2/5c2624563000006a0067f70d
+
 };

@@ -28,23 +28,23 @@
         <div *ngIf="validationAll">
           <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
           <mat-cell *matCellDef="let element">
-            <i class="small material-icons col s0.5 delete" (click)="sendAllToTrash(element.id)" >delete</i>
+            <i class="small material-icons col s0.5 delete" (click)="sendAllToTrash(element.id)" (click)="verifyError()">delete</i>
             <i class="small material-icons col s0.5 select_all">select_all</i>
-            <i class="small material-icons col s0.5 check" (click)="sendAllToAttended(element.id)">check</i>
+            <i class="small material-icons col s0.5 check" (click)="sendAllToAttended(element.id)" (click)="verifyError()">check</i>
           </mat-cell>
         </div>
         <div *ngIf="validationAttended">
           <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
           <mat-cell *matCellDef="let element">
-            <i class="small material-icons col s0.5 delete" (click)="sendAttendedToTrash(element.id)">delete</i>
-            <i class="small material-icons col s0.5 select_all" (click)="sendAttendedToAll(element.id)">select_all</i>
+            <i class="small material-icons col s0.5 delete" (click)="sendAttendedToTrash(element.id)" (click)="verifyError()">delete</i>
+            <i class="small material-icons col s0.5 select_all" (click)="sendAttendedToAll(element.id)" (click)="verifyError()">select_all</i>
           </mat-cell>
         </div>
         <div *ngIf="validationTrash">
           <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
           <mat-cell *matCellDef="let element">
-            <i class="small material-icons col s0.5 select_all" (click)="sendTrashToall(element.id)">select_all</i>
-            <i class="small material-icons col s0.5 check" (click)="sendTrashToAttended(element.id)">check</i>
+            <i class="small material-icons col s0.5 select_all" (click)="sendTrashToall(element.id)" (click)="verifyError()">select_all</i>
+            <i class="small material-icons col s0.5 check" (click)="sendTrashToAttended(element.id)" (click)="verifyError()">check</i>
           </mat-cell>
         </div>
       </ng-container>

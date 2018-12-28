@@ -15,12 +15,17 @@ export class GenericSandboxService{
     public profilesTrash: Subject<Profile[]> = new Subject<Profile[]>();
     public profilesImage: Subject<Profile[]> = new Subject<Profile[]>();
     public listProfiles: Profile[] = [];
-    public textSearch = new Subject<string>();
+    public textSearch: Subject<string> = new Subject<string>();
+    public errorGeneric: Subject<boolean> = new Subject<boolean>();
     
     constructor(private _httpRequest: GenericHttpService){}
 
     public changeTextSearch(text: string): void {
         this.textSearch.next(text);
+    }
+
+    public setErrorGeneric(status: boolean): void {
+        this.errorGeneric.next(status);
     }
 
     //API RANDOM
