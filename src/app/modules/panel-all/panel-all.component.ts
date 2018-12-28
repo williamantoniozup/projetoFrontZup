@@ -19,6 +19,7 @@ export class PanelAllComponent implements OnInit {
   ngOnInit(): void {
     this.loadListAll();
     this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
+    this._sandbox.setErrorGeneric(false);
   }  
 
   public onGetIdAllToAttended(id: number): void {
@@ -35,14 +36,14 @@ export class PanelAllComponent implements OnInit {
       (data:any)=>{ this.loadListAll()}, 
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        // console.log('Erro DELETE-> ', error)
+        console.log('Erro DELETE-> ', error)
       }
     );
     this._sandbox.doPostListProfilesAttended(payload).subscribe(
       (data:any)=>{}, 
       (error) => {
         this._sandbox.setErrorGeneric(true);
-        // console.log('Erro POST -> ', error)
+        console.log('Erro POST -> ', error)
       } 
     );
   }
