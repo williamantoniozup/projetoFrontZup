@@ -1,4 +1,4 @@
-<div class="containerDatatable row">
+<div class="containerDatatable row" *ngIf="!hasErrorMessage">
   
     <mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="imgProfile">
@@ -56,10 +56,17 @@
       [pageSizeOptions]="[10]"
       showFirstLastButtons
     ></mat-paginator>
-  
 </div>
 
+<div *ngIf="hasErrorMessage">
+  <app-error-generic></app-error-generic>
+</div>
+
+
 <!-- 
+<div *ngIf="hasErrorMessage">
+  <app-error-generic></app-error-generic>
+</div>
 <div class="containerDatatable row">
     <table datatable class="tablePerfil responsive-table" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
         <tbody *ngIf="validationAll">

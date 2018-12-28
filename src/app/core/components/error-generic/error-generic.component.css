@@ -1,0 +1,11 @@
+.cardError{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 2% 0px 0 25%;
+}
+
+::ng-deep.card-title{
+    left: 470px !important;
+    top: 0px;
+}
