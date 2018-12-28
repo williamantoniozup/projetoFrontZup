@@ -41,24 +41,11 @@ export class PanelDatatableComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.href = this.router.url;
-    console.log(this.href);
-    if(this.href == '/allprofiles'){
-      this.setTableAll();
-    }else if(this.href == '/attended'){
-      this.setTableAttended();
-    }else if(this.href == '/trash'){
-      this.setTableTrash();
-    }
+    this.setRoute();
   }
 
   ngOnChanges(changes: any): void {
-    if(this.data.length > 0){
-      this.dataSource = new MatTableDataSource<any>(this.data);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-      // this.profiles = this.data;
-    }
+    this.feedsDatatable();
     this.filterProfiles(this.textSearch);
   }
 
@@ -104,6 +91,27 @@ export class PanelDatatableComponent implements OnInit {
     this.onIdTrashToAttended.emit(id);
   }
 
+  public setRoute(): void {
+    this.href = this.router.url;
+    console.log(this.href);
+    if(this.href == '/allprofiles'){
+      this.setTableAll();
+    }else if(this.href == '/attended'){
+      this.setTableAttended();
+    }else if(this.href == '/trash'){
+      this.setTableTrash();
+    }
+  }
+
+  public feedsDatatable(): void {
+    if(this.data.length > 0){
+      this.dataSource = new MatTableDataSource<any>(this.data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+      // this.profiles = this.data;
+    }
+  }
+
   public filterProfiles(filterValue: string): any {
     if(filterValue) {
       filterValue = filterValue.trim();
@@ -127,9 +135,11 @@ export class PanelDatatableComponent implements OnInit {
     //   (response) => {
     //     console.log('quiiiiiiii', response)
     //     if(response){
-    //       this.showToastSucess();
-    //     } else {
+    //       console.log('aquiii houve erro');
     //       this.showToastFail();
+    //     } else {
+    //       console.log('aquii houve sucesso');
+    //       this.showToastSucess();
     //     }
     //   }
     // );
@@ -142,5 +152,4 @@ export class PanelDatatableComponent implements OnInit {
   public showToastFail() {
     this.toastService.show('Failed!', 1000, 'red');
   }
-    
 }
