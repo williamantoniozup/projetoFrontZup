@@ -36,9 +36,6 @@ export class GenericHttpService{
         return this._environment.TRASHCAN;
     }
 
-    
-
-
     // ENDPOINT API RANDOMUSER
     public getProfiles(): Observable<any>{return this._http.get(this.getUrlApiRandom());}
     public getImageProfileAccount(): Observable<any>{return this._http.get(this.getUrlApiRandomImgAccount());}

@@ -1,12 +1,11 @@
 import { GenericHttpService } from './generic-http.service';
-import { Injectable, EventEmitter } from "@angular/core";
-import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { Subject } from 'rxjs';
 import { Profile } from '../models/profile.model';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 
 @Injectable()
-
 export class GenericSandboxService{
 
     public profiles: Subject<Profile[]> = new Subject<Profile[]>();
@@ -17,6 +16,8 @@ export class GenericSandboxService{
     public listProfiles: Profile[] = [];
     public textSearch: Subject<string> = new Subject<string>();
     public errorGeneric: Subject<boolean> = new Subject<boolean>();
+    public clearSearch: Subject<boolean> = new Subject<boolean>();
+
     
     constructor(private _httpRequest: GenericHttpService){}
 
@@ -26,6 +27,10 @@ export class GenericSandboxService{
 
     public setErrorGeneric(status: boolean): void {
         this.errorGeneric.next(status);
+    }
+
+    public clearInputSearch(hasClearText: boolean): void {
+        this.clearSearch.next(hasClearText);
     }
 
     //API RANDOM
@@ -151,6 +156,4 @@ export class GenericSandboxService{
         });
         return listProfileAux;
     }
-
-
 }

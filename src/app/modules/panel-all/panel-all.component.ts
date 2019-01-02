@@ -9,14 +9,15 @@ import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angu
 })
 export class PanelAllComponent implements OnInit {
 
+  @Output()
+  public clearSearchTextInput: EventEmitter<boolean> = new EventEmitter(false);
   public listProfilesAll: Profile[] = [];
   public textSearchSmart: string;
 
-  constructor(private _sandbox: GenericSandboxService){
-    
-  }  
+  constructor(private _sandbox: GenericSandboxService){}  
 
   ngOnInit(): void {
+    this.clearSearchTextInput.emit(true);
     this.loadListAll();
     this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }  

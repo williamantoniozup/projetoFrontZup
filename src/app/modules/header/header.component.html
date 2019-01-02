@@ -16,6 +16,7 @@
               id="autocomplete-input"
               class="autocomplete black-text"
               (keyup)="applyFilter($event.target.value)"
+              [(ngModel)]="addSearchValueInput"
             />
           </div>
         </div>
