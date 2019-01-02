@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { GenericSandboxService } from 'src/app/services/generic-sandbox.service';
 import { Profile } from 'src/app/models/profile.model';
 
@@ -9,12 +9,15 @@ import { Profile } from 'src/app/models/profile.model';
 })
 export class PanelTrashComponent implements OnInit {
   
+  @Output()
+  public clearSearchTextInput: EventEmitter<boolean> = new EventEmitter(false);
   public listProfilesTrash: Profile[] = [];
   public textSearchSmart: string;
 
   constructor(private _sandbox: GenericSandboxService){} 
   
   ngOnInit(): void {
+    this.clearSearchTextInput.emit(true);
     this.loadListAllTrash();
     this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }

@@ -1,6 +1,6 @@
 import { GenericSandboxService } from 'src/app/services/generic-sandbox.service';
 import { Profile } from './../../models/profile.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-panel-attended',
@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelAttendedComponent implements OnInit{
 
+  @Output()
+  public clearSearchTextInput: EventEmitter<boolean> = new EventEmitter(false);
   public listProfilesAttended: Profile[] = [];
   public textSearchSmart: string;
 
@@ -16,6 +18,7 @@ export class PanelAttendedComponent implements OnInit{
 
 
   ngOnInit(): void{
+    this.clearSearchTextInput.emit(true);
     this.loadListAllAttended();
     this._sandbox.textSearch.subscribe(message => this.textSearchSmart = message);
   }

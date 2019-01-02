@@ -10,9 +10,10 @@ import { Profile } from 'src/app/models/profile.model';
 })
 export class HeaderComponent{
   
+  @Output() public textSearch = new EventEmitter<Event>();
   public listProfilesImage: Profile[] = [];
   public urlImg: string = '';
-  @Output() textSearch = new EventEmitter<Event>();
+  public addSearchValueInput: string = '';
 
   constructor(private _sandbox: GenericSandboxService){}  
 

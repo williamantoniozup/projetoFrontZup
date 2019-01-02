@@ -4,7 +4,9 @@
 
   <div class="containerMain nopadding row s12">
     <div class="nopadding col s1 menu"><app-menu></app-menu></div>
-    <div class="nopadding col s11 panel"><app-panel [textSearchSon]="textSearchFather"></app-panel></div>
+    <div class="nopadding col s11 panel">
+      <app-panel [textSearchSon]="textSearchFather" (clearSearchTextInput)="clearSearchTextInput($event)"></app-panel>
+    </div>
   </div>
 
   <div class="footer nopadding col s12"><p class="textFooter">Desafio front-end app.</p></div>
