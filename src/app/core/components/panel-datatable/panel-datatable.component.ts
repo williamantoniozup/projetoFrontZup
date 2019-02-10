@@ -135,6 +135,7 @@ export class PanelDatatableComponent implements OnInit {
   }
 
   public openServiceModal(element: any) {
+    console.log('ae',element);
     this.modalService.open(ModalComponent, {myPropertyModal: element});
     // console.log( 'aeeeee', element);
     // const dialogRef = this.dialog.open(ModalComponent, {
