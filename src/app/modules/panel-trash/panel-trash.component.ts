@@ -78,7 +78,7 @@ export class PanelTrashComponent implements OnInit {
 
   public searchProfileAttended(id: number): void {
     this.listProfilesTrash.forEach(obj => {
-      if(obj.id == id){
+      if (obj.id === id ) {
         this.moveProfileTrashToProfileAttended(obj);
       }
     });
